@@ -25,7 +25,23 @@
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </div>
+     <div class="sidebar">
+    <div class="close-icon" onclick="toggleMenu()">
+    <i class='bx bx-x'></i>
+  </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Exclusive Deals</a></li>
+        <li><a href="#service">Services</a></li>
+        <li><a href="#">Popular Destinations</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
     </div>
+
+    <!-- ✅ Overlay -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+    </div>
+    
 </section>
    
 <section class="containersection">
@@ -102,6 +118,17 @@
 
 
 
+<script>
+function toggleMenu() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+    
+    menuIcon.classList.toggle('active');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+  }
+</script>
 
     
 </body>
