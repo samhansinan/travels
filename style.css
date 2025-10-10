@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     padding: 0;
@@ -196,7 +199,7 @@ body::before {
     min-width: 300px;
     max-width: 450px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 10px 8px rgba(0, 0, 0, 0.5);
     text-align: center;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -234,6 +237,224 @@ body::before {
 .box-container .box p a:hover {
     color: #333;
     background-color: #ddd;
+}
+
+
+/* Services Section */
+
+
+
+
+.services-section h2 {
+    text-align: center;
+    font-size: 32px;
+    font-family: Verdana, sans-serif;
+    margin-bottom: 50px;
+    color: #333;
+    font-weight: 600;
+}
+
+.servicebox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin: 0 40px;
+}
+
+.servicesection {
+    flex: 1;
+    min-width: 300px;
+    max-width: 420px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    background-color: white;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.servicesection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.servicesection:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(198, 180, 180, 0.25);
+    
+}
+
+.servicesection:hover::before {
+    opacity: 1;
+}
+
+.servicesection img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.servicesection:hover img {
+    transform: scale(1.1);
+}
+
+.servicename {
+    padding: 25px 20px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.servicesection:hover .servicename {
+    background-color: transparent;
+}
+
+.servicename a {
+    text-decoration: none;
+    font-size: 19px;
+    color: #333;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.servicename a::after {
+    content: '→';
+    margin-left: 8px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.servicesection:hover .servicename a {
+    color: rgb(8, 1, 1);
+    transform: translateY(-3px);
+}
+
+.servicesection:hover .servicename a::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Add subtle animation on load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.servicesection {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.servicesection:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.servicesection:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.servicesection:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+
+@media (max-width: 1024px) {
+   
+}
+
+/* Mobile view (max-width: 768px) */
+@media (max-width: 768px) {
+    .services-section {
+        padding: 50px 20px;
+        margin-top: 40px;
+    }
+
+    .services-section h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .servicebox {
+        margin: 0 15px;
+        gap: 25px;
+    }
+
+    .servicesection {
+        min-width: 280px;
+        max-width: 100%;
+    }
+
+    .servicesection img {
+        height: 240px;
+    }
+
+    .servicename {
+        padding: 20px 15px;
+    }
+
+    .servicename a {
+        font-size: 18px;
+    }
+}
+
+/* Small mobile view (max-width: 480px) */
+@media (max-width: 480px) {
+    .services-section {
+        padding: 40px 15px;
+        margin-top: 30px;
+    }
+
+    .services-section h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .servicebox {
+        margin: 0 10px;
+        gap: 20px;
+    }
+
+    .servicesection {
+        min-width: 100%;
+    }
+
+    .servicesection img {
+        height: 220px;
+    }
+
+    .servicename {
+        padding: 18px 12px;
+    }
+
+    .servicename a {
+        font-size: 17px;
+    }
 }
 
 /* Tablet view (768px - 1024px) */
