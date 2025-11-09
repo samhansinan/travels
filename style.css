@@ -23,16 +23,18 @@ body::before {
 .top-nav {
     display: flex;
     position: fixed;
+    top: 0; /* ✅ ensures it stays at the very top */
+    left: 0; /* ✅ align to left edge */
     width: 100%;
     justify-content: space-between;
     align-items: center;
     background-color: #fdfdfd;
-    opacity: 0.9;
-    padding: 40px 40px;
+    opacity: 0.95;
+    padding: 20px 40px; /* slightly reduced padding for better top alignment */
     border-bottom: 1px solid #ddd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    z-index: 1000;
+    z-index: 1000; /* keeps navbar above all other sections */
 }
 
 .logo {
@@ -167,87 +169,95 @@ body::before {
   color: #ff4d4d; 
 }
 
-.containersection {
-    padding-top: 160px;
+  .hero {
+             position: relative;
+            color: rgb(231, 226, 226);
+            padding: 90px 0 20px;
+            margin-top: 120px;
+            min-height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+          .hero .main-img{
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+           filter: brightness(50%);
+        height: 600px;
+        overflow: hidden;
+
+        }
+
+        .hero .main-img img{
+            opacity: 0.9;
+           width: 100%;
+           filter: brightness(50%);
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 100%; /* start off-screen right */
+            transition: transform 1s ease-in-out, left 1s ease-in-out;
+            z-index: -1;
+        }
+
+      
+
+        .hero .main-img img.active {
+  left: 0; /* active image in center */
 }
 
-.container {
-    padding: 40px 20px;
-    margin-top: 0px;
-}
 
-.text-image {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    padding-right: 60px;
-    padding-left: 190px;
-}
 
-.text1 {
-    flex: 1;
-}
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
 
-.text1 h1 {
-    font-size: 48px;
-    font-family: Verdana, sans-serif;
-    margin-bottom: 20px;
-}
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
-.text1 h1 span {
-    font-weight: bold;
-}
+            margin-top: -120px; /* move content higher (increase negative value if you want it more up) */
+            max-width: 800px;   /* optional: keep text narrower inside container */
+            padding: 0 20px;     
+           
+        }
 
-.text1 p {
-    font-size: 19px;
-    line-height: 35px;
-    color: #444;
-    text-align: start;
-    margin-bottom: 30px;
-}
+        .hero-subtitle {
+            color: #eef1f2;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-weight: 600;
+            text-align: center;
 
-.image1 {
-    flex-shrink: 0;
-}
+            max-width: 700px; 
+            line-height: 1.7;
+        }
 
-.image1 img {
-    max-width: 600px;
-    width: 100%;
-    height: 440px;
-    object-fit: cover;
-    border: 5px solid #333;
-    box-shadow: 5px 5px 15px 15px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+         
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
 
-.container .text-image .try-btn {
-    text-align: left;
-    margin-top: 30px;
-}
-
-.container .text-image .try-btn button {
-    padding: 12px 30px;
-    width: 160px;
-    background-color: #585454;
-    color: white;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.container .text-image .try-btn button:hover {
-    background-color: #333;
-}
-
+        
 
 
 
 .designation{
    
-     padding: 50px 20px;
+     padding: 10px 20px;
 }
 .designation h1{
     text-align: center;
@@ -299,6 +309,64 @@ body::before {
 }
 
 
+/* work */
+.work{
+    margin-top: 70px;
+    background-color: #fafafa;
+    opacity: 0.7;
+    padding: 50px 20px;
+}
+
+.work .workhead{
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px; /* Reduce bottom gap */
+    width: auto;
+}
+
+.work .workhead h1{
+    color: #333;
+    font-size: 39px;
+    font-family: Arial, Helvetica, sans-serif;
+     margin: 0 0 10px 0;
+}
+
+.work .workhead p{
+    color: #0b1a2d;
+    font-size: 19px;
+    align-items: center;
+    margin: 0;
+}
+
+
+.workflow{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin-top: 30px;
+     gap: 30px; /* uniform gap between icons */
+   
+}
+
+.workflow .iconimg{
+    margin: 0 15px;
+    font-size: 20px;
+    width: 220px; 
+}
+
+.workflow .iconimg p{
+    width: 210px;
+    text-align: center;
+    margin: 0;
+}
+
+.workflow .iconimg .icon{
+    font-size: 75px;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
 /* Services Section */
 
 
@@ -778,41 +846,33 @@ body::before {
         display: none;
     }
 
-    .containersection {
-        padding-top: 120px;
-    }
+  .hero {
+    margin-top: 60px;
+    min-height: 420px;
+    padding: 40px 0 10px;
+  }
 
-    .container {
-        padding: 20px;
-    }
+  .hero .main-img {
+    height: 420px;
+  }
 
-    .text-image {
-        flex-direction: column-reverse;
-        padding-left: 20px;
-        padding-right: 20px;
-        gap: 30px;
-    }
+  .hero-content {
+    margin-top: -60px; /* less negative so text isn't too high */
+    padding: 0 10px;
+  }
 
-    .text1 h1 {
-        font-size: 32px;
-        text-align: center;
-    }
+  .hero-title {
+    font-size: 1.8rem;       /* smaller title */
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
 
-    .text1 p {
-        font-size: 16px;
-        line-height: 28px;
-        text-align: center;
-    }
-
-    .container .text-image .try-btn {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .container .text-image .try-btn button {
-        width: 80%;
-        max-width: 250px;
-    }
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 100%;
+    margin-bottom: 0.8rem;
+  }
 
     .image1 {
         width: 100%;
@@ -861,11 +921,21 @@ body::before {
         line-height: 26px;
     }
 
-    .container .text-image .try-btn button {
-        font-size: 15px;
-        padding: 10px 20px;
-        width: 90%;
-    }
+ .hero {
+    min-height: 380px;
+  }
+
+  .hero .main-img {
+    height: 380px;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
 
     .dealscontainer .title {
         font-size: 24px;
