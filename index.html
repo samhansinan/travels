@@ -10,6 +10,12 @@
     <title>Dp Travels</title>
 </head>
 <body>
+    <div id="loader">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading...</div>
+        <div class="loading-percentage">0%</div>
+        
+    </div>
 <section>
  <div class="top-nav">
         <div class="logo">
@@ -47,7 +53,7 @@
 </section>
  <section class="hero" id="home">
         <div class="main-img">
-             <img src="main4.jpg" id="img1" class="active" alt="slide1">
+             <img src="image/view6.jpg" id="img1" class="active" alt="slide1">
             <img src="image/view2.jpg" id="img2" alt="slide2">
         </div>
        
@@ -65,7 +71,7 @@ Are you looking for a safe, comfortable, and medically supervised home for your 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, iusto!</p>
     <div class="images">
         <div class="image-box">
-            <img src="image/view1.avif" alt="image1">
+            <img src="image/view6.jpg" alt="image1">
             <div class="details">
                 <span>Srilanka</span>
                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, dolorem.</p>
@@ -73,7 +79,7 @@ Are you looking for a safe, comfortable, and medically supervised home for your 
         </div>
 
          <div class="image-box">
-            <img src="image/view2.avif" alt="image1">
+            <img src="image/view5.jpg" alt="image1">
             <div class="details">
                 <span>Saudi Arabia</span>
                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum aliquid quibusdam corporis.</p>
@@ -81,7 +87,7 @@ Are you looking for a safe, comfortable, and medically supervised home for your 
         </div>
 
          <div class="image-box">
-            <img src="image/view3.avif" alt="image1">
+            <img src="image/view7.jpg" alt="image1">
             <div class="details">
                 <span>qatar</span>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque pariatur quos ad.</p>
@@ -89,7 +95,7 @@ Are you looking for a safe, comfortable, and medically supervised home for your 
         </div>
 
          <div class="image-box">
-            <img  src="image/view4.jpg" alt="image1">
+            <img  src="image/view8.jpg" alt="image1">
             <div  class="details">
                 <span>dubai</span>
                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id perferendis suscipit molestias!</p>
@@ -242,6 +248,38 @@ Are you looking for a safe, comfortable, and medically supervised home for your 
 </footer>
 
 <script>
+      // Simulate loading with percentage counter
+        let percentage = 0;
+        const percentageElement = document.querySelector('.loading-percentage');
+        const loader = document.getElementById('loader');
+        const content = document.getElementById('content');
+
+        const interval = setInterval(() => {
+            percentage += Math.floor(Math.random() * 15) + 5;
+            
+            if (percentage >= 100) {
+                percentage = 100;
+                clearInterval(interval);
+                
+                // Hide loader and show content after reaching 100%
+                setTimeout(() => {
+                    loader.classList.add('hidden');
+                    content.classList.add('visible');
+                }, 500);
+            }
+            
+            percentageElement.textContent = percentage + '%';
+        }, 200);
+
+        // Alternative: Simple timer-based loading (uncomment to use)
+        /*
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                content.classList.add('visible');
+            }, 2000); // 2 seconds delay
+        });
+        */
 function toggleMenu() {
     const menuIcon = document.querySelector('.menu-icon');
     const sidebar = document.querySelector('.sidebar');
