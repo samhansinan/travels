@@ -13,6 +13,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+   <div id="loader">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading...</div>
+        <div class="loading-percentage">0%</div>
+        
+    </div>
  <div class="top-nav">
         <div class="logo">
             <img src="image/logo.avif" alt="Dp Travel Logo">
@@ -34,12 +40,11 @@
     <i class='bx bx-x'></i>
   </div>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#">Exclusive Deals</a></li>
-        <li><a href="#service">Services</a></li>
+        <li><a href="index.html#service">Services</a></li>
         <li><a href="#">Popular Destinations</a></li>
         <li><a href="#">Contact Us</a></li>
-      </ul>
     </div>
 
     <!-- ✅ Overlay -->
@@ -58,7 +63,7 @@
             <div class="hero-content">
                 <h1 class="hero-title">Discover Exclusive Travel Deals</h1>
                 <p class="hero-subtitle">Handpicked travel packages for your next unforgettable journey.</p>
-                <a href="#exclusive-deals" class="btn-primary">Explore Deals</a>
+                <a href="index.html#exclusive-deals" class="btn-primary">Explore Deals</a>
             </div>
         </div>
     </section>
@@ -157,30 +162,104 @@
   </section>
 
   <!-- Newsletter Subscription -->
-  <section class="newsletter">
-    <h2>Subscribe for Exclusive Deals</h2>
-    <p>Get notified about latest travel offers and discounts directly in your inbox.</p>
-    <form>
-      <input type="email" placeholder="Enter your email" required>
-      <button type="submit">Subscribe</button>
-    </form>
-  </section>
+
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <h3>DP Travels</h3>
-      <p>Book your dream vacation with our exclusive travel packages and enjoy unmatched services.</p>
-      <div class="social-links">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">Twitter</a>
-      </div>
-      <p class="footer-bottom">&copy; 2025 DP Travels. All Rights Reserved.</p>
-    </div>
-  </footer>
+ <footer>
+  <div class="footer-container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-section footer-about">
+                    <h3>About Dp Travels</h3>
+                    <p>Your trusted partner in creating unforgettable travel experiences. We specialize in personalized tours, exotic destinations, and seamless travel planning.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section footer-links">
+                    <h3 class="qlink">Quick Links</h3>
+                    <ul class="undeline">
+                        <li class="line"><a href="#">Home</a></li>
+                        <li class="line"><a href="#">About Us</a></li>
+                        <li class="line"><a href="#">Destinations</a></li>
+                        <li class="line"><a href="#">Services</a></li>
+                        <li class="line"><a href="#">Blog</a></li>
+                        <li class="line"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section footer-contact">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact-item" id="contect">
+                        <i class='bx bx-map'></i>
+                        <span>32 Revolution Road,<br>Colombo, Sri Lanka</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class='bx bx-phone'></i>
+                        <span>+94 340 976 442</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class='bx bx-envelope'></i>
+                        <span>info@dptravels.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class='bx bx-time'></i>
+                        <span>Mon - Fri: 9AM - 7PM</span>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-section footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p style="color: #b0bec5; font-size: 14px; margin-bottom: 15px;">Subscribe to get special offers and travel updates!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dp Travels. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+</footer>
 
 <script>
+    let percentage = 0;
+        const percentageElement = document.querySelector('.loading-percentage');
+        const loader = document.getElementById('loader');
+        const content = document.getElementById('content');
+
+        const interval = setInterval(() => {
+            percentage += Math.floor(Math.random() * 15) + 5;
+            
+            if (percentage >= 100) {
+                percentage = 100;
+                clearInterval(interval);
+                
+                // Hide loader and show content after reaching 100%
+                setTimeout(() => {
+                    loader.classList.add('hidden');
+                    content.classList.add('visible');
+                }, 500);
+            }
+            
+            percentageElement.textContent = percentage + '%';
+        }, 200);
   function toggleMenu() {
     const menuIcon = document.querySelector('.menu-icon');
     const sidebar = document.querySelector('.sidebar');
