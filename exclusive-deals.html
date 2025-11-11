@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exclusive Deals | DP Travels</title>
+  <link rel="stylesheet" href="exclusive-deals.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/3.0.3/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+ <div class="top-nav">
+        <div class="logo">
+            <img src="image/logo.avif" alt="Dp Travel Logo">
+            
+        </div>
+         <div class="menu-icon" onclick="toggleMenu()"><i class='bx bx-menu-alt-right'></i></div>
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">Home </a></li>
+                <li><a href="exclusive-deals.html">Exclucive Deals </a></li>
+                
+                <li><a href="#service">Services </a></li>
+                <li><a href="#Desinations">Popular Desinations </a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+     <div class="sidebar">
+    <div class="close-icon" onclick="toggleMenu()">
+    <i class='bx bx-x'></i>
+  </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Exclusive Deals</a></li>
+        <li><a href="#service">Services</a></li>
+        <li><a href="#">Popular Destinations</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- ✅ Overlay -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+    </div>
+    
+</section>
+  <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="main-img">
+             <img src="image/dubai1.jpg" id="img1" class="active" alt="slide1">
+            <img src="image/view2.jpg" id="img2" alt="slide2">
+        </div>
+       
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Exclusive Travel Deals</h1>
+                <p class="hero-subtitle">Handpicked travel packages for your next unforgettable journey.</p>
+                <a href="#exclusive-deals" class="btn-primary">Explore Deals</a>
+            </div>
+        </div>
+    </section>
+
+
+  <!-- Exclusive Deals Section -->
+  <section id="exclusive-deals" class="exclusive-section">
+    <h2>Exclusive Deals & Offers</h2>
+    <p class="section-desc">Grab our limited-time travel packages and experience the world for less. Explore exciting destinations with unbeatable prices!</p>
+
+    <div class="deals-container">
+
+      <div class="deal-card">
+        <img src="image/dubai1.jpg" alt="Dubai Tour Package">
+        <div class="deal-content">
+          <h3>Dubai Tour Package</h3>
+          <p>4 Nights / 5 Days – Visa + Flights + Desert Safari + City Tour</p>
+          <span class="price">From LKR 185,000</span>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <img src="image/malay2.jpg" alt="Malaysia Holiday Package">
+        <div class="deal-content">
+          <h3>Malaysia Holiday Package</h3>
+          <p>3 Nights – Flight + Hotel + City Tour</p>
+          <span class="price">From LKR 120,000</span>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <img src="image/singapore.jpg" alt="Singapore Getaway">
+        <div class="deal-content">
+          <h3>Singapore Getaway</h3>
+          <p>4 Nights – Flights + Accommodation + Sentosa Island Tour</p>
+          <span class="price">From LKR 160,000</span>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <img src="image/thailand.jpg" alt="Thailand Special Offer">
+        <div class="deal-content">
+          <h3>Thailand Special Offer</h3>
+          <p>5 Nights – Flight + Hotel + Island Hopping + Dinner Cruise</p>
+          <span class="price">From LKR 145,000</span>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section class="featured-destinations">
+    <h2>Featured Destinations</h2>
+    <div class="destination-container">
+      <div class="destination-card">
+        <img src="image/Paris.jpg" alt="Paris">
+        <h3>Paris</h3>
+      </div>
+      <div class="destination-card">
+        <img src="image/London.jpg" alt="London">
+        <h3>London</h3>
+      </div>
+      <div class="destination-card">
+        <img src="image/Swiss.jpg" alt="Switzerland">
+        <h3>Switzerland</h3>
+      </div>
+      <div class="destination-card">
+        <img src="image/Maldives.jpg" alt="Maldives">
+        <h3>Maldives</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial-card">
+        <p>"DP Travels made our Dubai trip unforgettable! Great deals and excellent service."</p>
+        <span>- Aisha R.</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Amazing experience with Malaysia tour package. Everything was smooth and comfortable."</p>
+        <span>- Kaveen D.</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Highly recommend DP Travels! The Singapore getaway was perfect for our family."</p>
+        <span>- Malsha P.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription -->
+  <section class="newsletter">
+    <h2>Subscribe for Exclusive Deals</h2>
+    <p>Get notified about latest travel offers and discounts directly in your inbox.</p>
+    <form>
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <h3>DP Travels</h3>
+      <p>Book your dream vacation with our exclusive travel packages and enjoy unmatched services.</p>
+      <div class="social-links">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+      </div>
+      <p class="footer-bottom">&copy; 2025 DP Travels. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+<script>
+  function toggleMenu() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+    
+    menuIcon.classList.toggle('active');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
