@@ -216,6 +216,7 @@ body::before {
     /* Heading Section */
     .services-banner {
       text-align: center;
+      margin-top: 70px;
       padding: 70px 20px 30px;
     }
 
