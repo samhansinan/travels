@@ -7,9 +7,40 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/3.0.3/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css' rel='stylesheet'>
-    <meta name="google-site-verification" content="google7808cd83e4e93c74" />
+    <meta name="google-site-verification" content="vSqrgsuB6cOMApSYensvjrtyXhrrQhKqIlau1rN4AoY" />
+
     <title>Dp Travels</title>
 </head>
+<style>
+    .main-img {
+  position: relative;
+  width: 100%;
+  height: 300px; /* adjust to your size */
+  overflow: hidden;
+}
+
+.slider-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 100%; /* Start off-screen on the right */
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.slider-image.active {
+  left: 0;
+  opacity: 1;
+}
+
+.slider-image.previous {
+  left: -100%; /* Move off-screen to the left */
+  opacity: 0;
+}
+
+</style>
 <body>
     <div id="loader">
         <div class="spinner"></div>
@@ -53,10 +84,11 @@
     
 </section>
  <section class="hero" id="home">
-        <div class="main-img">
-             <img src="image/view6.jpg" id="img1" class="active" alt="slide1">
-            <img src="image/view2.jpg" id="img2" alt="slide2">
-        </div>
+       <div class="main-img">
+  <img id="img1" src="image/view6.jpg" class="slider-image active" alt="slide1">
+  <img id="img2" src="image/dubai1.jpg" class="slider-image" alt="slide2">
+</div>
+
        
         <div class="container">
             <div class="hero-content">
@@ -162,38 +194,35 @@ Planning your next getaway? Let us handle your flights, visas, and tours for a s
                 </div>
 
                 <!-- Quick Links -->
-                <div class="footer-section footer-links">
-                    <h3 class="qlink">Quick Links</h3>
-                    <ul class="undeline">
-                        <li class="line"><a href="#">Home</a></li>
-                        <li class="line"><a href="#">About Us</a></li>
-                        <li class="line"><a href="#">Destinations</a></li>
-                        <li class="line"><a href="#">Services</a></li>
-                        <li class="line"><a href="#">Blog</a></li>
-                        <li class="line"><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-
+               
                 <!-- Contact Info -->
                 <div class="footer-section footer-contact">
                     <h3>Contact Us</h3>
                     <div class="footer-contact-item" id="contect">
                         <i class='bx bx-map'></i>
-                        <span>32 Revolution Road,<br>Colombo, Sri Lanka</span>
+                        <span>45k Colombo Horana Miriswatta<br>piliyandala,Srilanka,10300</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class='bx bx-phone'></i>
-                        <span>+94 340 976 442</span>
+                        <span>0117072727</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class='bx bx-envelope'></i>
-                        <span>info@dptravels.com</span>
+                        <span>info@dptravelandtours.com</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class='bx bx-time'></i>
                         <span>Mon - Fri: 9AM - 7PM</span>
                     </div>
                 </div>
+
+    <!-- map -->
+     <!-- Map Section -->
+<div class="footer-section footer-map">
+    <h3>Find Us</h3>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d990.4470797930685!2d79.932558169534!3d6.795590699575103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24fed1fee9215%3A0x98355420ac9494f!2s45%20J%2C%2045%20Colombo%20-%20Horana%20Rd%2C%20Piliyandala%2010300!5e0!3m2!1sen!2slk!4v1763299541521!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
 
                 <!-- Newsletter -->
                 <div class="footer-section footer-newsletter">
@@ -261,6 +290,42 @@ function toggleMenu() {
     sidebar.classList.toggle('active');
     overlay.classList.toggle('active');
   }
+
+//   change image
+// Array of image paths
+const imagePaths = [
+  'image/malay1.jpg',
+  'image/dubai1.jpg',
+  'image/london.jpg',
+  'image/Swiss.jpg'
+];
+
+const container = document.querySelector('.main-img');
+
+// Create image elements based on the array
+imagePaths.forEach((path, index) => {
+  const img = document.createElement('img');
+  img.src = path;
+  img.classList.add('slider-image');
+  if (index === 0) img.classList.add('active'); // Initial active image
+  container.appendChild(img);
+});
+
+let currentIndex = 0;
+const images = document.querySelectorAll('.slider-image');
+
+setInterval(() => {
+  const current = images[currentIndex];
+  current.classList.remove('active');
+  current.classList.add('previous');
+
+  currentIndex = (currentIndex + 1) % images.length;
+  const next = images[currentIndex];
+  next.classList.add('active');
+
+  setTimeout(() => current.classList.remove('previous'), 1000);
+}, 3000); // Switch every 3 seconds
+
 </script>
 
     
