@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/3.0.3/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css' rel='stylesheet'>
@@ -62,7 +65,7 @@
                 
                 <li><a href="services.html">Services </a></li>
                 <li><a href="#Desinations">Popular Desinations </a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </div>
      <div class="sidebar">
@@ -73,8 +76,8 @@
         <li><a href="#">Home</a></li>
         <li><a href="exclusive-deals.html">Exclusive Deals</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="#">Popular Destinations</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="designation.html">Popular Destinations</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
     </div>
 
@@ -84,10 +87,13 @@
     
 </section>
  <section class="hero" id="home">
-       <div class="main-img">
-  <img id="img1" src="image/view6.jpg" class="slider-image active" alt="slide1">
-  <img id="img2" src="image/dubai1.jpg" class="slider-image" alt="slide2">
+<div class="main-img">
+  <img src="image/malay2.jpg" class="slider-image active" alt="slide1">
+  <img src="image/dubai1.jpg" class="slider-image" alt="slide2">
+  <img src="image/view6.jpg" class="slider-image" alt="slide3">
+  <img src="image/London.jpg" class="slider-image" alt="slide4">
 </div>
+
 
        
         <div class="container">
@@ -101,7 +107,8 @@ Planning your next getaway? Let us handle your flights, visas, and tours for a s
    
 <section class="designation" id="Desinations">
     <h1>Popular Desinations </h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, iusto!</p>
+    <p>Browse our top travel picks for adventure, culture, and iconic beauty your next dream getaway awaits.</p>
+
     <div class="images">
         <div class="image-box">
             <img src="image/London2.jpg" alt="image1">
@@ -186,8 +193,8 @@ Planning your next getaway? Let us handle your flights, visas, and tours for a s
                     <h3>About Dp Travels</h3>
                     <p>Your trusted partner in creating unforgettable travel experiences. We specialize in personalized tours, exotic destinations, and seamless travel planning.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
-                        <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://www.facebook.com/share/17ZdLWqZs2/" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.instagram.com/dptravelandtour?igsh=M281NnF5Zzc3d3Fs" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
                         <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
                         <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
                     </div>
@@ -196,7 +203,7 @@ Planning your next getaway? Let us handle your flights, visas, and tours for a s
                 <!-- Quick Links -->
                
                 <!-- Contact Info -->
-                <div class="footer-section footer-contact">
+                <div class="footer-section footer-contact" id="contact">
                     <h3>Contact Us</h3>
                     <div class="footer-contact-item" id="contect">
                         <i class='bx bx-map'></i>
@@ -270,7 +277,7 @@ Planning your next getaway? Let us handle your flights, visas, and tours for a s
             }
             
             percentageElement.textContent = percentage + '%';
-        }, 200);
+        }, 50);
 
         // Alternative: Simple timer-based loading (uncomment to use)
         /*
@@ -292,38 +299,19 @@ function toggleMenu() {
   }
 
 //   change image
-// Array of image paths
-const imagePaths = [
-  'image/malay1.jpg',
-  'image/dubai1.jpg',
-  'image/london.jpg',
-  'image/Swiss.jpg'
-];
-
-const container = document.querySelector('.main-img');
-
-// Create image elements based on the array
-imagePaths.forEach((path, index) => {
-  const img = document.createElement('img');
-  img.src = path;
-  img.classList.add('slider-image');
-  if (index === 0) img.classList.add('active'); // Initial active image
-  container.appendChild(img);
-});
-
 let currentIndex = 0;
-const images = document.querySelectorAll('.slider-image');
+const images = document.querySelectorAll(".slider-image");
 
 setInterval(() => {
   const current = images[currentIndex];
-  current.classList.remove('active');
-  current.classList.add('previous');
+  current.classList.remove("active");
+  current.classList.add("previous");
 
   currentIndex = (currentIndex + 1) % images.length;
   const next = images[currentIndex];
-  next.classList.add('active');
+  next.classList.add("active");
 
-  setTimeout(() => current.classList.remove('previous'), 1000);
+  setTimeout(() => current.classList.remove("previous"), 1000); // Remove slide-out class after animation
 }, 3000); // Switch every 3 seconds
 
 </script>

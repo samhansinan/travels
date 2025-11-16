@@ -6,8 +6,11 @@ body {
     padding: 0;
     background-color: #e6ede9;
     position: relative;
+     font-family: 'Inter', sans-serif;
 }
-
+h1, h2, h3, .hero-title, .logo span {
+    font-family: 'Poppins', sans-serif;
+}
 body::before {
     content: "";
     position: fixed;
