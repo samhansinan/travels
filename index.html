@@ -58,23 +58,29 @@
     </div>
     
 </section>
- <section class="hero" id="home">
-<div class="main-img">
-  <img src="image/malay2.jpg" class="slider-image active" alt="slide1">
-  <img src="image/dubai1.jpg" class="slider-image" alt="slide2">
-  <img src="image/view9.jpg" class="slider-image" alt="slide3">
-  <img src="image/view8.jpg" class="slider-image" alt="slide4">
-</div>
+<section class="containersection">
 
+     <div class="container">
+        <div class="text-image">
+             <div class="text1">
+      <h1>Travel For <span>Season</span> and Reason....!</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt perspiciatis nam eius amet doloribus excepturi, 
+        quisquam beatae facilis hic repellat earum repudiandae quas, ea maxime modi rem quia vero soluta!
+      </p>
+      <div class="try-btn">
+        <button >Try it Out</button>
+      </div>
+      
+    </div>
 
-       
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Welcome to DP Travels</h1>
-               <p class="hero-subtitle">Your journey, our passion. We handle flights, visas, and tours so you can focus on making memories.</p>
+            <div class="image1">
+                <img src="main3.jpg" alt="Dp Travel">
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
    
 <section class="designation" id="Desinations">
     <h1>Popular Destinations </h1>
@@ -118,6 +124,56 @@
     </div>
 
 </section>
+
+<section class="packages" id="packages">
+    <div class="section-head">
+        <h1>Special Travel Packages</h1>
+        <p>Explore our hand-picked travel packages to make your journey unforgettable.</p>
+    </div>
+
+    <div class="package-container">
+        <div class="package-box">
+            <img src="image/maldives.jpg" alt="Maldives Package">
+            <h3>Maldives Paradise</h3>
+            <p>5 Nights & 6 Days all-inclusive luxury package. Perfect for couples and families.</p>
+            
+        </div>
+
+        <div class="package-box">
+            <img src="image/London2.jpg" alt="Europe Package">
+            <h3>Europe Tour</h3>
+            <p>10 Days across Paris, Rome & London. Discover history, culture, and cuisine.</p>
+            
+        </div>
+
+        <div class="package-box">
+            <img src="image/thailand.jpg" alt="Thailand Package">
+            <h3>Thailand Adventure</h3>
+            <p>7 Days of beaches, temples, and nightlife. Adventure for all travel enthusiasts.</p>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- WhatsApp Chat Icon -->
+<a href="javascript:void(0);" id="whatsapp-icon" class="whatsapp-chat">
+    <i class='bx bxl-whatsapp'></i>
+</a>
+
+<!-- Chatbot Container -->
+<div id="chatbot-container">
+    <div class="chatbot-header">
+        <h3>Chat with us</h3>
+        <span id="close-chatbot">&times;</span>
+    </div>
+    <div class="chatbot-body">
+        <p>Click below to start chatting with us on WhatsApp:</p>
+        <a href="https://wa.me/94717072727" target="_blank" class="chatbot-link">
+            <i class='bx bxl-whatsapp'></i> Chat on WhatsApp
+        </a>
+    </div>
+</div>
 
 
 
@@ -286,6 +342,26 @@ setInterval(() => {
 
   setTimeout(() => current.classList.remove("previous"), 1000); // Remove slide-out class after animation
 }, 3000); // Switch every 3 seconds
+
+
+// chatbot
+const whatsappIcon = document.getElementById('whatsapp-icon');
+const chatbotContainer = document.getElementById('chatbot-container');
+const closeChatbot = document.getElementById('close-chatbot');
+
+// Show chatbot on WhatsApp icon click
+whatsappIcon.addEventListener('click', () => {
+    chatbotContainer.style.display = 'flex';
+    whatsappIcon.style.display = 'none';
+});
+
+// Close chatbot
+closeChatbot.addEventListener('click', () => {
+    chatbotContainer.style.display = 'none';
+    whatsappIcon.style.display = 'flex';
+});
+
+
 
 </script>
 
