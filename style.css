@@ -275,6 +275,13 @@ body::before {
     text-align: center;
     font-size: 28px;
 }
+.des{
+    align-items: center;
+    background-color: #005bb5;
+    padding: 10px;
+    color: #fff;
+    
+}
 .designation p{
     text-align: center;
     color: #fff;
@@ -320,6 +327,9 @@ body::before {
   font-weight: 600;
   margin-bottom: 5px;
 }
+.image-box  p{
+    color: #000000;
+}
 
 /* pakage */
 .packages {
@@ -335,6 +345,13 @@ body::before {
     margin-bottom: 10px;
 }
 
+.pakage{
+     align-items: center;
+    background-color: #005bb5;
+    padding: 10px;
+    color: #fff;
+
+}
 .packages .section-head p {
     font-size: 18px;
    color: #fff;
@@ -491,7 +508,7 @@ body::before {
 .exclusive-section h2 {
   font-size: 29px;
   color: #000000;
-  margin-left: 20px;
+  margin-left: 100px;
   margin-bottom: 33px;
 }
 .deals{
