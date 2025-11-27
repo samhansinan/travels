@@ -7,9 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+ <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/3.0.3/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/3.0.3/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  
     <link rel="icon" type="image/png" href="image/logo.jpg"/>
     <meta name="google-site-verification" content="vSqrgsuB6cOMApSYensvjrtyXhrrQhKqIlau1rN4AoY" />
 
@@ -23,6 +24,10 @@
         <div class="loading-percentage">0%</div>
         
     </div>
+    <div id="content" class="hidden">
+    <!-- Your actual content here -->
+    Hello world!
+</div>
 <section>
  <div class="top-nav">
         <div class="logo">
@@ -33,7 +38,7 @@
         <div class="navbar">
             <ul>
                 <li><a href="#">Home </a></li>
-                <li><a href="exclusive-deals.html">Exclucive Deals </a></li>
+                <li><a href="#exclusive-deals">Exclucive Deals </a></li>
                 
                 <li><a href="services.html">Services </a></li>
                 <li><a href="designation.html">Popular Destinations </a></li>
@@ -75,7 +80,7 @@
     </div>
 
             <div class="image1">
-                <img src="main3.jpg" alt="Dp Travel">
+                 <img id="slideImage" src="main3.jpg" alt="Dp Travel">
             </div>
 
         </div>
@@ -175,7 +180,49 @@
     </div>
 </div>
 
+<section id="exclusive-deals" class="exclusive-section" >
+    <h2>Exclusive <span class="deals">Deals</span></h2>
+  
+    <div class="deals-container">
 
+      <div class="deal-card">
+        <img src="image/dubai1.jpg" alt="Dubai Tour Package">
+        <div class="deal-content">
+          <h3>Dubai Tour Package</h3>
+          <p>4 Nights / 5 Days – Visa + Flights + Desert Safari + City Tour</p>
+          
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <img src="image/malay2.jpg" alt="Malaysia Holiday Package">
+        <div class="deal-content">
+          <h3>Malaysia Holiday Package</h3>
+          <p>3 Nights – Flight + Hotel + City Tour</p>
+         
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <img src="image/singapore.jpg" alt="Singapore Getaway">
+        <div class="deal-content">
+          <h3>Singapore Getaway</h3>
+          <p>4 Nights – Flights + Accommodation + Sentosa Island Tour</p>
+         
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <img src="image/thailand.jpg" alt="Thailand Special Offer">
+        <div class="deal-content">
+          <h3>Thailand Special Offer</h3>
+          <p>5 Nights – Flight + Hotel + Island Hopping + Dinner Cruise</p>
+          
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 
 
@@ -191,7 +238,6 @@
             <p>Choose your preferred Local Expert</p>
 
         </div>
-
         <div class="iconimg">
             <h2 class="icon"><i class='bx bx-calendar' style='color:#0e0f0f'  ></i></h2>
             <p>Book a time on their calendar</p>
@@ -285,6 +331,36 @@
 </footer>
 
 <script>
+    //auto chnage
+    const images = [
+    "main3.jpg",
+    "image/view4.jpg",
+    "image/view9.jpg",
+    "image/view10.jpg"
+];
+
+let index = 0;
+const img = document.getElementById("slideImage");
+
+function changeImage() {
+    index = (index + 1) % images.length;
+    img.classList.remove("slide"); // reset animation
+
+    // Change image
+    img.src = images[index];
+
+    // Restart animation
+    setTimeout(() => {
+        img.classList.add("slide");
+    }, 10);
+}
+
+// Change every 3 seconds
+setInterval(changeImage, 3000);
+
+// First animation on page load
+img.classList.add("slide");
+
       // Simulate loading with percentage counter
         let percentage = 0;
         const percentageElement = document.querySelector('.loading-percentage');
@@ -328,20 +404,7 @@ function toggleMenu() {
   }
 
 //   change image
-let currentIndex = 0;
-const images = document.querySelectorAll(".slider-image");
 
-setInterval(() => {
-  const current = images[currentIndex];
-  current.classList.remove("active");
-  current.classList.add("previous");
-
-  currentIndex = (currentIndex + 1) % images.length;
-  const next = images[currentIndex];
-  next.classList.add("active");
-
-  setTimeout(() => current.classList.remove("previous"), 1000); // Remove slide-out class after animation
-}, 3000); // Switch every 3 seconds
 
 
 // chatbot
