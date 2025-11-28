@@ -441,8 +441,10 @@ body::before {
 }
 
 .exclusive-section h2 {
-  font-size: 29px;
+  font-size: 34px;
   color: #fff;
+  text-align: center;
+
   margin-left: 100px;
   margin-bottom: 33px;
 }
@@ -572,30 +574,46 @@ body::before {
       border: 1px solid rgba(255,255,255,0.4);
     }
 
-    .service-card:hover {
-      transform: translateY(-12px) scale(1.03);
-      box-shadow: 0 15px 25px rgba(0,0,0,0.15);
-      background: rgba(255,255,255,0.9);
+  .circle-containter{
+    padding: 20px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+}
+
+.circle{
+    width: 170px;   /* Same size as image */
+}
+
+.circle img{
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.circle p{
+    font-style: italic;
+}
+@media (max-width: 600px) {
+    .circle {
+        width: calc(50% - 20px); 
+           /* 2 per row */
     }
 
-    .service-card i {
-      font-size: 48px;
-      color: #134b9b;
-      margin-bottom: 18px;
+    .circle img{
+        width: 90px;
+        height: 90px;
+        
+        aspect-ratio: 1/1;          /* Keep circle shape */
+        border-radius: 50%;
     }
+}
 
-    .service-card h3 {
-      font-size: 22px;
-      color: #0a2e57;
-      margin-bottom: 10px;
-    }
 
-    .service-card p {
-      font-size: 15px;
-      color: #555;
-      line-height: 1.6;
-    }
-
+    
     .why-choose-us {
     text-align: center;
     padding: 60px 20px;
