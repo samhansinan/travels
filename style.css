@@ -1,5 +1,6 @@
 html{
     scroll-behavior: smooth;
+     scroll-padding-top: 140px;
 }
 body {
     margin: 0;
@@ -18,8 +19,8 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("main6.jpg") no-repeat center center/cover;
-    opacity: 0.4;
+    background: url("image/main1.jpg") no-repeat center center/cover;
+    opacity: 0.3;
     z-index: -1;
 }
 
@@ -43,12 +44,12 @@ body::before {
 .logo {
     display: flex;
     align-items: center;
-    margin-left: 55px;
+    margin-left: 85px;
 }
 
 .logo img {
     width: 120px;
-    height: 100px;
+    height: 130px;
 }
 
 .logo span {
@@ -633,7 +634,7 @@ body::before {
 
 .choose-box {
     background: white;
-    padding: 30px;
+    padding: 25px;
     border-radius: 14px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: .3s;
@@ -1016,7 +1017,7 @@ body::before {
 
     .logo img {
         width: 80px;
-        height: 70px;
+        height: 90px;
     }
 
     .menu-icon {
@@ -1177,9 +1178,12 @@ body::before {
         }
 /* Small mobile view (max-width: 480px) */
 @media (max-width: 480px) {
+    .logo{
+        margin-left: 25px;
+    }
     .logo img {
         width: 65px;
-        height: 55px;
+        height: 65px;
     }
 
    .text1 h1 {
