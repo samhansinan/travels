@@ -269,7 +269,7 @@ body::before {
 .packages {
     padding: 60px 20px;
     text-align: center;
-    opacity: 0.9;
+    opacity: 0.8;
     background-color: #32284C;
 }
 
@@ -435,7 +435,7 @@ body::before {
 
 /* Exclusive Deals Section */
 .exclusive-section {
-  opacity: 0.9;
+  opacity: 0.8;
     background-color: #32284C;
   padding: 10px 20px;
   padding-bottom: 60px;
