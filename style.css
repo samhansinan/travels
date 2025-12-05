@@ -223,7 +223,7 @@ body {
   }
 }
 
-/* NEW Glass Search Card */
+/* Services Card */
 .search-card {
   position: absolute;
   left: 50%;
@@ -232,117 +232,305 @@ body {
   width: min(900px, 92%);
   padding: 24px 30px;
   border-radius: 22px;
-
-  /* Glassmorphism */
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-
   box-shadow: 0px 20px 45px rgba(0,0,0,0.25);
 }
 
-/* Modern Tabs */
-.search-tabs {
-  display: flex;
-  background: #f1f1f1;
-  padding: 4px;
-  border-radius: 999px;
-  margin-bottom: 16px;
+.search-card h2 {
+  text-align: center;
+  padding: 20px 0;
 }
 
-.search-tabs button {
-  flex: 1;
-  border: none;
-  padding: 10px 0;
-  font-size: 14px;
-  background: transparent;
-  border-radius: 999px;
-  cursor: pointer;
-  color: #555;
-  transition: 0.25s;
-}
-
-.search-tabs button.active {
-  background: #ff6b35;
-  color: #fff;
-}
-
-/* Modern Form Layout */
+/* Grid */
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr) auto;
-  gap: 14px;
-  align-items: end;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
+/* Input Box */
 .input-box {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-direction: column;   /* label goes below */
+  align-items: center;
+  text-align: center;
 }
 
-.input-box label {
-  font-size: 12px;
-  color: #666;
-  font-weight: 600;
-}
-
-/* Modern Pill Input */
+/* Icon Field */
 .input-field {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   background: #fff;
   border: 1px solid #ddd;
-  padding: 10px 14px;
-  border-radius: 999px;
-}
-
-.input-field input,
-.input-field select {
-  border: none;
-  outline: none;
+  padding: 22px;
+  border-radius: 14px;
   width: 100%;
-  font-size: 14px;
-  background: transparent;
+  font-size: 28px;
 }
 
-/* Search Button */
-.btn-search {
-  border: none;
-  padding: 12px 28px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #ff6b35, #f97316);
-  color: #fff;
-  font-size: 15px;
+/* Label */
+.input-box label {
+  font-size: 16px;
+  color: #444;
   font-weight: 600;
-  cursor: pointer;
-  transition: 0.25s;
+  margin-top: 10px;
 }
 
-.btn-search:hover {
-  opacity: 0.9;
-}
-
-/* Mobile view */
+/* Mobile */
 @media (max-width: 768px) {
-  
   .form-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
-
-  .btn-search {
-    width: 100%;
-  }
-
-  .hero-text h1 {
-    font-size: 32px;
-  }
-
   .search-card {
     bottom: -140px;
   }
 }
+
+/* explore island layout */
+.explore-isaland {
+  display: flex;
+ margin-top: 130px;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 70px;
+  flex-wrap: wrap; /* allows responsive stacking */
+}
+
+/* explore images */
+.explore-img {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.explore-img .image1,
+.explore-img .image-mid {
+  max-width: 250px;
+}
+
+.image1 img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.image-mid img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* content section */
+.content-explore {
+  max-width: 450px;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.content-explore h1 {
+  font-size: 2rem;
+  color: #0b1a2d;
+  font-size: 40px;
+  font-family: Georgia, serif;
+  margin-bottom: 15px;
+}
+
+.content-explore p {
+  font-size: 1rem;
+  color: #555;
+  font-family: URW Chancery L, cursive;
+  line-height: 1.6;
+}
+.content-explore .ex-btn{
+  text-align: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 10px;
+  width: 120px;
+  border-radius: 10px;
+  background-color: #222;
+  color: #ddd;
+}
+.content-explore .ex-btn:hover{
+  background-color: #0c315c;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* pakages */
+.Popular-pakage{
+  padding: 10px 110px;
+}
+
+.Popular-pakage h1{
+  font-weight: 600;
+}
+
+
+.pakage-boxes{
+  display: flex;
+  padding: 20px 0;
+  gap: 25px;
+}
+
+.pakage-boxes .pbox{
+ max-width: 300px;
+height: 400px;
+ position: relative;      /* Important */
+  overflow: hidden;
+
+}
+
+.pakage-boxes .pbox img{
+ width: 100%;
+ height:100%;
+ object-fit: cover;
+ border-radius: 10px;
+}
+
+.pakage-boxes .pbox .content{
+  position: absolute;
+  bottom: 0;               /* content at bottom */
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  font-size: 17px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);  /* transparent overlay */
+  border-radius: 0 0 10px 10px;
+}
+
+.pakage-boxes .pbox .content p {
+  margin: 3px 0;
+}
+
+/* Heart icon on top right */
+    .pbox .heart {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255,255,255,0.85);
+      padding: 6px;
+      font-size: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease;
+      z-index: 10;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .pbox .heart:hover { transform: scale(1.08); }
+
+    /* default icon color (outline) */
+    .pbox .heart i {
+      font-size: 20px;
+      color: #333;
+      transition: color .18s ease, transform .18s ease;
+    }
+
+    /* active (saved) state: icon turns red */
+    .pbox .heart.active i {
+      color: white;  
+      background-color: #e63946; /* red */
+      transform: scale(1.06);
+    }
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .explore-isaland {
+    flex-direction: column;  /* images top, content bottom */
+    text-align: center;
+    padding: 20px;
+  }
+
+  .explore-img {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .image1 img {
+    height: 200px;
+    max-width: 110px;
+      object-fit: cover;
+    object-position: center;
+  }
+
+  .image-mid img {
+    height: 260px;
+    object-fit: cover;
+    object-position: center;
+    max-width: 150px;
+  }
+
+  .content-explore {
+    max-width: 100%;
+    margin-left: 19px;
+    text-align: center;
+  }
+  .content-explore h1 {
+    text-align: start;
+    
+  }
+   .content-explore p{
+    text-align: start;
+   }
+
+   .content-explore .ex-btn{
+    display: block;       /* important */
+  margin-left: 0;  
+  align-items: center;     /* align to start */
+  margin-top: 15px;
+
+  
+   }
+   .Popular-pakage{
+  padding: 10px 40px;
+}
+
+.Popular-pakage h1{
+  font-weight: 600;
+}
+
+ 
+
+  .pakage-boxes{
+    flex-direction: column;     /* stack vertically */
+    gap: 20px;
+  }
+
+  .pakage-boxes .pbox{
+    width: 100%;
+    max-width: 100%;
+    height: 320px;              /* reduce height for mobile */
+  }
+
+  .pakage-boxes .pbox img{
+    height: 100%;
+  }
+
+  .pakage-boxes .pbox .content{
+    padding: 12px;
+    font-size: 15px;            /* smaller text */
+  }
+
+  @media (max-width: 768px) {
+  .pbox .heart {
+    top: 8px;
+    right: 8px;
+    font-size: 18px;
+    padding: 5px 9px;
+  }
+}
+
+}
+
 
 /* footer */
 /* Modern Footer Styles */
