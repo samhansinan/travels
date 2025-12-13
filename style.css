@@ -370,8 +370,26 @@ body {
 .Popular-pakage h1{
   font-weight: 600;
 }
+.explore-link{
+  text-align: right;
+  margin-right: 69px;
+}
+.explore-link p{
+  font-family:Georgia, serif;
+}
+.explore-link a{
+  color: #2466b1;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 17px 0;
+
+}
 
 
+.explore-link i{
+  align-items: center;
+  font-size: 20px;
+}
 .pakage-boxes{
   display: flex;
   padding: 20px 0;
@@ -441,6 +459,203 @@ height: 400px;
       background-color: #e63946; /* red */
       transform: scale(1.06);
     }
+    /* why choose us */
+   .choose-headline {
+  padding: 10px 110px;
+ 
+}
+
+
+
+    .why-choose{
+      display: flex;
+      padding: 15px 40px;
+      gap:20px;
+      padding: 20px 100px;
+    }
+
+     .why-choose .choose-box{
+      max-width: 230px;
+      height: 300px;
+      border-radius: 20px;
+      
+      border: 3px solid rgb(120, 68, 68);
+      box-shadow: 4px 5px 7px;
+     }
+
+     .why-choose .choose-box p{
+      text-align: center;
+      font-size: 40px;
+      padding: 5px;
+     }
+      .why-choose .choose-box h2{
+        font-size: 22px;
+        text-align: center;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .choose-box .choose-content .con{
+        padding: 15px;
+        font-size: 16px;
+        width: auto;
+        
+      }
+
+
+      /* testimonation */
+      .testimonation{
+        padding: 25px 100px;
+        margin-top: 20px;
+      }
+
+      .testimonation .tes-content{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .testimonation .tes-content h2{
+        font-size: 27px;
+        max-width: 280px;
+        font-family: Arial Narrow, sans-serif;
+      }
+
+      .testimonation .tes-content p{
+        width: 40%;
+        font-family: "Amarna", sans-serif;
+      }
+
+      .review-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+      scroll-behavior: smooth;
+    }
+.customer-review{
+   display: flex;
+  gap: 40px;
+  width: 990px;     /* EXACT width for 3 boxes */
+  overflow: hidden; /* hides box 4 */
+  padding: 10px 5px;
+        
+  }
+
+  .customer-review .review-box{
+   width: 300px;  
+  background: #fafafa;
+  padding: 20px;
+  height: 420px;
+  flex-shrink: 0;
+  box-shadow: 5px 10px 10px 10px rgb(218, 209, 209);
+    }
+
+ .customer-review .review-box .profile{
+    display: flex;
+
+  }
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+  margin: 10px 0;
+}
+
+
+.customer-review .review-box .profile img{
+  max-width: 70px;
+  border-radius: 50%;
+  height: 50px;
+}
+
+        .customer-review .review-box .profile p{
+          text-align: center;
+          align-items: center;
+          padding: 10px 10px;
+          margin-top: 15px;
+          margin-left: 10px;
+          width: auto;
+        }
+
+
+    .profile-content h2{
+ font-size: 18px;
+ font-weight: 600;
+ padding: 10px;
+ padding-top: 20px;
+    }
+
+    .profile-content p{
+      padding: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+
+    .published{
+      padding: 10px 10px;
+      font-size: 13px;
+    }
+
+    /* Navigation Buttons */
+.nav-btn {
+  background: black;
+  color: white;
+  padding: 10px 14px;
+  font-size: 22px;
+  
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.nav-btn:hover {
+  background: #333;
+}
+
+
+    /* Mobile Responsive */
+@media (max-width: 768px) {
+
+  .testimonation{
+        padding: 25px 40px;
+        margin-top: 20px;
+      }
+
+      .testimonation .tes-content{
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .testimonation .tes-content p{
+        width: auto;
+        margin-top: 10px;
+      }
+
+ .review-container {
+    justify-content: center; /* center the slider */
+  }
+
+  .customer-review {
+    display: flex;
+    gap: 20px;              /* space between cards */
+    width: auto;            /* let container take natural width */
+    overflow-x: auto;       /* allow horizontal scroll */
+    padding: 10px 0px;
+    scroll-behavior: smooth;
+  }
+
+  .customer-review .review-box {
+    width: 300px;           /* card width */
+    flex-shrink: 0;
+  }
+
+
+  
+}
+
+
 
 /* 📱 Mobile Responsive */
 @media (max-width: 768px) {
@@ -519,6 +734,11 @@ height: 400px;
     padding: 12px;
     font-size: 15px;            /* smaller text */
   }
+  .explore-link{
+  text-align: start;
+  margin-right: 69px;
+  
+}
 
   @media (max-width: 768px) {
   .pbox .heart {
@@ -529,7 +749,38 @@ height: 400px;
   }
 }
 
+
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+  .why-choose {
+    padding: 10px 20px;
+    flex-wrap: wrap;           /* allow boxes to move to next line */
+    justify-content: center;   /* center alignment */
+    gap: 15px;
+  }
+
+  .why-choose .choose-box {
+    width: 45%;                /* 2 boxes per row */
+    max-width: none;
+    height: 220px; 
+            /* adjust height */
+  }
+
+  .choose-headline {
+    padding: 10px 20px;        /* reduce padding on mobile */
+  }
+.why-choose .choose-box h2{
+  padding: 0;
+}
+  .choose-box .choose-content .con {
+    padding: 0;
+    font-size: 12px;           /* slightly smaller text */
+  }
+}
+
 
 
 /* footer */
