@@ -619,13 +619,14 @@ height: 400px;
 @media (max-width: 768px) {
 
   .testimonation{
-        padding: 25px 40px;
+        padding: 20px 0px;
         margin-top: 20px;
       }
 
       .testimonation .tes-content{
         display: flex;
         flex-wrap: wrap;
+        padding: 25px 40px;
       }
 
       .testimonation .tes-content p{
@@ -633,24 +634,23 @@ height: 400px;
         margin-top: 10px;
       }
 
- .review-container {
-    justify-content: center; /* center the slider */
-  }
-
   .customer-review {
-    display: flex;
-    gap: 20px;              /* space between cards */
-    width: auto;            /* let container take natural width */
-    overflow-x: auto;       /* allow horizontal scroll */
-    padding: 10px 0px;
-    scroll-behavior: smooth;
-  }
+        max-width: 100%;
+        gap: 20px;
+      }
 
-  .customer-review .review-box {
-    width: 300px;           /* card width */
-    flex-shrink: 0;
-  }
+      .customer-review .review-box {
+        width: 100%;
+        min-width: 260px;
+        height: auto;
+        min-height: 420px;
+      }
 
+      .nav-btn {
+        padding: 8px 12px;
+        font-size: 18px;
+        margin: 0 5px;
+      }
 
   
 }
