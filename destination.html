@@ -26,89 +26,104 @@
 </section>
 
 
-<!-- ================= FILTER BAR ================= -->
-<section class="filters">
-<div class="filter-group">
-<label>Filter by type</label>
-<select>
-<option>Cities</option>
-<option>Beaches</option>
-<option>Adventure</option>
-<option>Luxury</option>
-</select>
-</div>
+<!-- ================= FILTER + AD WRAPPER ================= -->
+<section class="filter-wrapper">
+
+  <!-- LEFT: Filters -->
+  <div class="filters">
+
+    <div class="filter-group">
+      <label>Filter by type of place</label>
+      <select>
+        <option>Cities</option>
+        <option>Beaches</option>
+        <option>Adventure</option>
+        <option>Luxury</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Sort places by</label>
+      <select>
+        <option>Most Popular</option>
+        <option>Newest</option>
+        <option>Trending</option>
+      </select>
+    </div>
+
+  </div>
 
 
-<div class="filter-group">
-<label>Sort by</label>
-<select>
-<option>Most Popular</option>
-<option>Newest</option>
-<option>Trending</option>
-</select>
-</div>
 </section>
+
 
 
 <!-- ================= DESTINATIONS GRID ================= -->
-<section class="destinations">
+<section class="destination-wrapper">
 
+  <!-- LEFT: Destination Cards -->
+  <div class="destinations">
 
-<div class="card">
-<img src="image/London2.jpg" alt="London">
-<div class="card-body">
-<span class="country">ENGLAND</span>
-<h3>London</h3>
-</div>
-</div>
+    <div class="card">
+      <img src="image/London2.jpg" alt="London">
+      <div class="card-body">
+        <span class="country">ENGLAND</span>
+        <h3>London</h3>
+      </div>
+    </div>
 
+    <div class="card">
+      <img src="image/Los _angels.jpg" alt="Los Angeles">
+      <div class="card-body">
+        <span class="country">USA</span>
+        <h3>Los Angeles</h3>
+      </div>
+    </div>
 
-<div class="card">
-<img src="image/Los _angels.jpg" alt="Los Angeles">
-<div class="card-body">
-<span class="country">USA</span>
-<h3>Los Angeles</h3>
-</div>
-</div>
+    <div class="card">
+      <img src="image/paris.jpg" alt="Paris">
+      <div class="card-body">
+        <span class="country">FRANCE</span>
+        <h3>Paris</h3>
+      </div>
+    </div>
 
+    <div class="card">
+      <img src="image/thailand.jpg" alt="Thailand">
+      <div class="card-body">
+        <span class="country">THAILAND</span>
+        <h3>Bangkok</h3>
+      </div>
+    </div>
 
-<div class="card">
-<img src="image/paris.jpg" alt="Paris">
-<div class="card-body">
-<span class="country">FRANCE</span>
-<h3>Paris</h3>
-</div>
-</div>
+    <div class="card">
+      <img src="image/dubai1.jpg" alt="Dubai">
+      <div class="card-body">
+        <span class="country">UAE</span>
+        <h3>Dubai</h3>
+      </div>
+    </div>
 
+    <div class="card">
+      <img src="image/malay2.jpg" alt="Malaysia">
+      <div class="card-body">
+        <span class="country">MALAYSIA</span>
+        <h3>Kuala Lumpur</h3>
+      </div>
+    </div>
 
-<div class="card">
-<img src="image/thailand.jpg" alt="Thailand">
-<div class="card-body">
-<span class="country">THAILAND</span>
-<h3>Bangkok</h3>
-</div>
-</div>
+  </div>
 
-
-<div class="card">
-<img src="image/dubai1.jpg" alt="Dubai">
-<div class="card-body">
-<span class="country">UAE</span>
-<h3>Dubai</h3>
-</div>
-</div>
-
-
-<div class="card">
-<img src="image/malay2.jpg" alt="Malaysia">
-<div class="card-body">
-<span class="country">MALAYSIA</span>
-<h3>Kuala Lumpur</h3>
-</div>
-</div>
+<aside class="advert" id="advertBox">
+  <button class="close-ad" onclick="closeAd()">
+    <i class='bx bx-x'></i>
+  </button>
+  <img src="image/advert2.jpeg" alt="Advertisement">
+</aside>
 
 
 </section>
+
 
 <footer>
   <div class="footer-container">
@@ -182,5 +197,13 @@
             </div>
         </div>
 </footer>
+
+<script>
+  function closeAd() {
+    const ad = document.getElementById("advertBox");
+    ad.style.display = "none";
+  }
+</script>
+
 </body>
 </html>

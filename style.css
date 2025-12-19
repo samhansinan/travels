@@ -8,6 +8,8 @@
 body {
   font-family: "Inter", Arial, sans-serif;
   background: #ffffff;
+
+  
 }
 
 /* Header */
@@ -158,13 +160,15 @@ body {
 
 .hero-text {
   position: absolute;
-  top: 35%;
+  top: 25%;
+  width: auto;
   left: 8%;
   color: #fff;
 }
 
 .hero-text h1 {
   font-size: 45px;
+  width: auto;
   font-weight: 800;
 }
 
@@ -478,7 +482,8 @@ height: 400px;
       max-width: 230px;
       height: 300px;
       border-radius: 20px;
-      
+     background: linear-gradient(to right, rgb(32, 101, 124), rgb(19, 13, 127));
+      color: rgb(231, 202, 202);
       border: 3px solid rgb(120, 68, 68);
       box-shadow: 4px 5px 7px;
      }
@@ -486,6 +491,7 @@ height: 400px;
      .why-choose .choose-box p{
       text-align: center;
       font-size: 40px;
+      color: wheat;
       padding: 5px;
      }
       .why-choose .choose-box h2{
@@ -1027,3 +1033,4 @@ height: 400px;
                 gap: 10px;
             }
         }
+/* footer */
