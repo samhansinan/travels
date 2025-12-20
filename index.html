@@ -119,6 +119,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Temporibus fuga quos, modi ipsa et odit molestiae, beatae aut mollitia
         libero fugiat, alias recusandae eos explicabo delectus?</p>
+        <p class="more-text hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, soluta.</p>
         <button class="ex-btn">Explore More</button>
     </div>
     
@@ -127,7 +128,7 @@
 <section>
   <div class="Popular-pakage">
     <h1>POPULAR PAKAGES</h1>
-<p class="explore-link"><a href="#">Explore More <i class='bx bx-right-top-arrow-circle'></i></a></p>
+<p class="explore-link"><button id="showMoreBtn">Explore More <i class='bx bx-right-top-arrow-circle'></i></button></p>
     <div class="pakage-boxes">
      
       <div class="pbox">
@@ -173,6 +174,42 @@
         </div>
 
       </div>
+
+  <div class="pbox hidden">
+  <div class="heart"><i class="bx bx-heart"></i></div>
+  <img src="image/view5.jpg" alt="">
+  <div class="content">
+    <p>France</p>
+    <p>Beautiful city</p>
+    <p>From 12000</p>
+  </div>
+</div>
+
+
+  <div class="pbox hidden">
+  <div class="heart"><i class="bx bx-heart"></i></div>
+  <img src="image/Saudi.jpg" alt="">
+  <div class="content">
+    <p>France</p>
+    <p>Beautiful city</p>
+    <p>From 12000</p>
+  </div>
+</div>
+
+  <div class="pbox hidden">
+  <div class="heart"><i class="bx bx-heart"></i></div>
+  <img src="image/singapore.jpg" alt="">
+  <div class="content">
+    <p>France</p>
+    <p>Beautiful city</p>
+    <p>From 12000</p>
+  </div>
+</div>
+
+
+
+
+
 
     </div>
   </div>
@@ -472,6 +509,27 @@ prevBtn.addEventListener("click", () => {
       });
     });
 
+
+    // hide button
+    const btn = document.getElementById("showMoreBtn");
+  const hiddenBoxes = document.querySelectorAll(".pbox.hidden");
+
+  let isShown = false;
+
+  btn.addEventListener("click", () => {
+    hiddenBoxes.forEach(box => {
+      box.style.display = isShown ? "none" : "block";
+    });
+
+    btn.textContent = isShown ? "Explore More" : "Show Less";
+    isShown = !isShown;
+  });
+
+
+  // more p page
+    document.querySelector(".ex-btn").addEventListener("click", () => {
+    document.querySelector(".more-text").classList.toggle("hidden");
+  });
 
 </script>
 </body>
