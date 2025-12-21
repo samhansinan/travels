@@ -14,6 +14,38 @@
 <link rel="stylesheet" href="destination.css">
 </head>
 <body>
+<header class="header">
+  <div class="logo">
+    <img src="image/logo.jpg" alt="">
+  </div>
+  <div class="menu-icon" onclick="toggleMenu()"><i class='bx bx-menu-alt-right'></i></div>
+
+  <nav class="navbar">
+    <a class="active" href="index.html">Home</a>
+    <a href="#">Exclucive Deals</a>
+    <a href="#">Packages</a>
+    <a href="destination.html">Destinations </a>
+    <a href="#">Contact</a>
+  </nav>
+
+     <div class="sidebar">
+    <div class="close-icon" onclick="toggleMenu()">
+    <i class='bx bx-x'></i>
+  </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#exclusive-deals">Exclusive Deals</a></li>
+        <li><a href="#service">Services</a></li>
+        <li><a href="destination.html">Popular Destinations</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- ✅ Overlay -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+    </div>
+  
+</header>
 
 
 <!-- ================= HERO SECTION ================= -->
@@ -34,22 +66,15 @@
 
     <div class="filter-group">
       <label>Filter by type of place</label>
-      <select>
-        <option>Cities</option>
-        <option>Beaches</option>
-        <option>Adventure</option>
+      <select id="cityFilter">
+        <option value="all">All Cities</option>
+        <option value="london">London</option>
+        <option value="kandy">Kandy</option>
         <option>Luxury</option>
       </select>
     </div>
 
-    <div class="filter-group">
-      <label>Sort places by</label>
-      <select>
-        <option>Most Popular</option>
-        <option>Newest</option>
-        <option>Trending</option>
-      </select>
-    </div>
+  
 
   </div>
 
@@ -64,7 +89,7 @@
   <!-- LEFT: Destination Cards -->
   <div class="destinations">
 
-    <div class="card">
+    <div class="card" data-city="london">
       <img src="image/London2.jpg" alt="London">
       <div class="card-body">
         <span class="country">ENGLAND</span>
@@ -72,27 +97,21 @@
       </div>
     </div>
 
-    <div class="card">
-      <img src="image/Los _angels.jpg" alt="Los Angeles">
+    <div class="card"  data-city="london">
+      <img src="image/Los _angels.jpg" alt="London">
       <div class="card-body">
         <span class="country">USA</span>
         <h3>Los Angeles</h3>
       </div>
     </div>
 
-    <div class="card">
-      <img src="image/paris.jpg" alt="Paris">
-      <div class="card-body">
-        <span class="country">FRANCE</span>
-        <h3>Paris</h3>
-      </div>
-    </div>
+    
 
-    <div class="card">
-      <img src="image/thailand.jpg" alt="Thailand">
+    <div class="card" data-city="kandy">
+      <img src="image/kandy.jpg" alt="kandy">
       <div class="card-body">
-        <span class="country">THAILAND</span>
-        <h3>Bangkok</h3>
+        <span class="country">Srilanka</span>
+        <h3>Kandy</h3>
       </div>
     </div>
 
@@ -115,14 +134,19 @@
   </div>
 
 <aside class="advert" id="advertBox">
+  <p>Advertisement</p>
+
   <button class="close-ad" onclick="closeAd()">
     <i class='bx bx-x'></i>
   </button>
-  <img src="image/advert2.jpeg" alt="Advertisement">
+
+  <img id="adImage" src="image/advert2.jpeg" alt="Advertisement">
 </aside>
 
 
+
 </section>
+
 
 
 <footer>
@@ -133,46 +157,43 @@
                     <h3>About Dp Travels</h3>
                     <p>Your trusted partner in creating unforgettable travel experiences. We specialize in personalized tours, exotic destinations, and seamless travel planning.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
-                        <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://www.facebook.com/share/17ZdLWqZs2/" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.instagram.com/dptravelandtour?igsh=M281NnF5Zzc3d3Fs" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
                         <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
                         <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
                     </div>
                 </div>
 
                 <!-- Quick Links -->
-                <div class="footer-section footer-links">
-                    <h3 class="qlink">Quick Links</h3>
-                    <ul class="undeline">
-                        <li class="line"><a href="#">Home</a></li>
-                        <li class="line"><a href="#">About Us</a></li>
-                        <li class="line"><a href="#">Destinations</a></li>
-                        <li class="line"><a href="#">Services</a></li>
-                        <li class="line"><a href="#">Blog</a></li>
-                        <li class="line"><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-
+               
                 <!-- Contact Info -->
                 <div class="footer-section footer-contact" id="contact">
                     <h3>Contact Us</h3>
                     <div class="footer-contact-item" id="contect">
                         <i class='bx bx-map'></i>
-                        <span>32 Revolution Road,<br>Colombo, Sri Lanka</span>
+                        <span>45k Colombo Horana Miriswatta<br>piliyandala,Srilanka,10300</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class='bx bx-phone'></i>
-                        <span>+94 340 976 442</span>
+                        <span>0117072727</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class='bx bx-envelope'></i>
-                        <span>info@dptravels.com</span>
+                        <span>info@dptravelandtours.com</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class='bx bx-time'></i>
                         <span>Mon - Fri: 9AM - 7PM</span>
                     </div>
                 </div>
+
+    <!-- map -->
+     <!-- Map Section -->
+<div class="footer-section footer-map">
+    <h3>Find Us</h3>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.7893903318322!2d79.9332716!3d6.7954607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24500b32e9da7%3A0x8120bf9bc3e8ae0c!2sDP%20Travel%20-%20PVT%20LTD!5e0!3m2!1sen!2slk!4v1763306749071!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
 
                 <!-- Newsletter -->
                 <div class="footer-section footer-newsletter">
@@ -203,6 +224,60 @@
     const ad = document.getElementById("advertBox");
     ad.style.display = "none";
   }
+
+
+  function toggleMenu() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+    
+    menuIcon.classList.toggle('active');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+  }
+
+
+  // fillter
+  const cityFilter = document.getElementById("cityFilter");
+  const cards = document.querySelectorAll(".card");
+
+  cityFilter.addEventListener("change", () => {
+    const selectedCity = cityFilter.value;
+
+    cards.forEach(card => {
+      const cardCity = card.dataset.city;
+
+      if (selectedCity === "all" || cardCity === selectedCity) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+
+
+  // add
+  const adImages = [
+    "image/advert2.jpeg",
+    "image/ad1.jpg",
+    "image/ad3.jpg"
+  ];
+
+  let adIndex = 0;
+  const adImageEl = document.getElementById("adImage");
+
+  setInterval(() => {
+    adIndex = (adIndex + 1) % adImages.length;
+
+    // Fade out
+    adImageEl.style.opacity = "0";
+
+    setTimeout(() => {
+      adImageEl.src = adImages[adIndex];
+      adImageEl.style.opacity = "1";
+    }, 800);
+
+  }, 3000); // change every 6 seconds
 </script>
 
 </body>

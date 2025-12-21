@@ -25,6 +25,8 @@ body::before {
     z-index: -1;
 }
 
+
+
 /* loading */
  #loader {
             position: fixed;
