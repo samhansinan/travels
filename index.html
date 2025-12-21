@@ -20,12 +20,35 @@
   <div class="menu-icon" onclick="toggleMenu()"><i class='bx bx-menu-alt-right'></i></div>
 
   <nav class="navbar">
-    <a class="active" href="#">Home</a>
-    <a href="#">Exclucive Deals</a>
-    <a href="#">Packages</a>
-    <a href="destination.html">Destinations </a>
-    <a href="#">Contact</a>
-  </nav>
+  <a class="active" href="#">Home</a>
+  <a href="#">About Us</a>
+  <a href="#">Flights</a>
+  <div class="dropdown" id="visaDropdown">
+    <a href="#" class="vdropbtn">Visa & Insurance ▾</a>
+    <div class="dropdown-content">
+      <a href="#">Travel Insurance</a>
+      <a href="#">Visa Assistance </a>
+      
+    </div>
+
+  </div>
+  
+
+  <!-- Dropdown -->
+  <div class="dropdown" id="tourDropdown">
+    <a href="#" class="dropbtn">Tours ▾</a>
+    <div class="dropdown-content">
+      <a href="#">Inbound Tours</a>
+      <a href="#">Outbound Tours</a>
+      <a href="#">Custom Tour Packages</a>
+    </div>
+  </div>
+
+  <a href="#">Packages</a>
+  <a href="destination.html">Destinations</a>
+  <a href="#">Contact</a>
+</nav>
+
 
      <div class="sidebar">
     <div class="close-icon" onclick="toggleMenu()">
@@ -34,7 +57,14 @@
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#exclusive-deals">Exclusive Deals</a></li>
-        <li><a href="#service">Services</a></li>
+        <li class="mobile-dropdown">
+          <a href="#" onclick="toggleDropdown(event)">Services ▾</a>
+          <ul class="mobile-submenu">
+            <li><a href="#">Inbound Tours</a></li>
+            <li><a href="#">Outbound Tours</a></li>
+            <li><a href="#">Custom Tour Packages</a></li>
+          </ul>
+        </li>
         <li><a href="destination.html">Popular Destinations</a></li>
         <li><a href="#contact">Contact Us</a></li>
       </ul>
@@ -47,7 +77,7 @@
 </header>
 
 <section class="hero">
-  <img src="image/Thailand2.jpg" class="hero-img">
+  <img src="image/London.jpg" class="hero-img">
 
   <div class="hero-text">
     <h1>Find Your Next Adventure</h1>
@@ -614,6 +644,43 @@
 
 
 <script>
+
+  // drop d
+  function toggleDropdown(e) {
+  e.preventDefault();
+  e.target.parentElement.classList.toggle("active");
+}
+
+
+// 1
+const dropdown = document.getElementById("tourDropdown");
+
+dropdown.querySelector(".dropbtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  dropdown.classList.toggle("active");
+});
+
+/* Close dropdown when clicking outside */
+document.addEventListener("click", function (e) {
+  if (!dropdown.contains(e.target)) {
+    dropdown.classList.remove("active");
+  }
+});
+
+// 2
+const dropdown1 = document.getElementById("visaDropdown");
+
+dropdown1.querySelector(".vdropbtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  dropdown1.classList.toggle("active");
+});
+
+/* Close dropdown when clicking outside */
+document.addEventListener("click", function (e) {
+  if (!dropdown1.contains(e.target)) {
+    dropdown1.classList.remove("active");
+  }
+});
 // review btn
 const container = document.querySelector(".customer-review");
 const nextBtn = document.querySelector(".next-btn");

@@ -2,12 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
 body {
+  font-family: "Inter", Arial, sans-serif;
   background: #ffffff;
-  color: #222;
+
+  
 }
 
 body::before {
@@ -21,7 +22,6 @@ body::before {
     opacity: 0.4;
     z-index: -1;
 }
-/* navigation */
 /* Header */
 .header {
   position: fixed;
@@ -78,6 +78,75 @@ body::before {
 
 .navbar .active {
   color: #ff6b35;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  padding-top: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #fff;
+  min-width: 200px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-content a:hover {
+  background: #ff6b35;
+  color: #fff;
+}
+
+/* Show when active */
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  list-style: none;
+  padding: 0;
+}
+
+/* Dropdown submenu */
+.mobile-submenu {
+  display: none;
+  list-style: none;
+  padding-left: 15px;
+  background: #333;
+}
+
+.mobile-submenu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Show submenu */
+.mobile-dropdown.active .mobile-submenu {
+  display: block;
+}
+
+/* Arrow spacing */
+.mobile-dropdown > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -155,18 +224,6 @@ body::before {
   color: #ff4d4d; 
 }
 
-/* ----------- Mobile Menu Button ----------- */
-.menu-icon {
-  font-size: 32px;
-  cursor: pointer;
-  display: none;
-}
-
-/* ----------- Mobile Navbar (initially hidden) ----------- */
-.navbar {
-  transition: 0.4s ease;
-}
-
 @media (max-width: 768px) {
   .navbar {
     position: fixed;
@@ -198,6 +255,7 @@ body::before {
     font-size: 16px;
   }
 
+  
   /* Header spacing fix */
   .header {
     padding: 20px 5%;
