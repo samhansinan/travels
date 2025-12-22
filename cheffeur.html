@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+ /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #ffffff;
+
+  
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("image/main2.jpg") no-repeat center center/cover;
+    opacity: 0.4;
+    z-index: -1;
+}
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 8%;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+   backdrop-filter: blur(12px);
+  /* background: rgba(255, 255, 255, 0.45); */
+  opacity: 0.8;
+  box-shadow: 0 2px 10px 10px rgba(0,0,0,0.08);
+}
+
+.logo img{
+  font-size: 26px;
+ max-width: 80px;
+ height: auto;
+  display: block;
+   border-radius: 12px;
+  font-weight: 800;
+  color: #ff6b35;
+}
+
+.navbar {
+  display: flex;
+  gap: 25px;
+
+  
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.nav-links a:hover,
+.nav-links .active {
+  background: #ff6b35;
+  color: #fff;
+}
+
+.navbar a:hover {
+  color: #ff6b35;
+}
+
+.navbar .active {
+  color: #ff6b35;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  padding-top: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #fff;
+  min-width: 200px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-content a:hover {
+  background: #ff6b35;
+  color: #fff;
+}
+
+/* Show when active */
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  list-style: none;
+  padding: 0;
+}
+
+/* Dropdown submenu */
+.mobile-submenu {
+  display: none;
+  list-style: none;
+  padding-left: 15px;
+  background: #333;
+}
+
+.mobile-submenu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Show submenu */
+.mobile-dropdown.active .mobile-submenu {
+  display: block;
+}
+
+/* Arrow spacing */
+.mobile-dropdown > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: #222;
+  transition: right 0.3s ease;
+  z-index: 99;
+  padding-top: 80px;
+}
+.sidebar.active {
+  right: 0;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 1.2rem 2rem;
+  transition: background-color 0.3s;
+}
+.sidebar ul li a:hover {
+  background-color: #444;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 98;
+}
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.close-icon {
+      position: absolute; 
+       top: 15px;              
+  right: 10px;
+  text-align: right;
+  padding: 15px;
+   z-index: 1001; 
+  cursor: pointer;
+}
+
+.close-icon i {
+  font-size: 28px;
+  color: #fff; 
+  transition: 0.3s ease;
+}
+
+.close-icon i:hover {
+  color: #ff4d4d; 
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 200px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+    border-radius: 8px 0 0 8px;
+  }
+
+  /* Show menu icon */
+  .menu-icon {
+    display: block;
+  }
+
+  /* When open */
+  .navbar.open {
+    right: 10px;
+  }
+
+  /* Hide nav links (desktop default) */
+  .navbar a {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  /* Header spacing fix */
+  .header {
+    padding: 20px 5%;
+  }
+} 
+/* ===== Modern Chauffeur Drive Styles ===== */
+.chauffeur-drive-section {
+  padding: 100px 0;
+ /* Changed background to white */
+  font-family: 'Poppins', sans-serif;
+  color: #001f4d;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #001f4d;
+  letter-spacing: 1px;
+}
+
+.section-header p {
+  font-size: 18px;
+  color: #333;
+}
+
+.vehicle-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.vehicle-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  padding-bottom: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  transition: all 0.5s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.vehicle-card .img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.vehicle-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.vehicle-card:hover img {
+  transform: scale(1.1);
+}
+
+.vehicle-card .overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.vehicle-card p {
+  font-size: 16px;
+  color: #001f4d;
+  margin: 15px 20px 0 20px;
+}
+
+.vehicle-card .badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #001f4d;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.chauffeur-features {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.chauffeur-features h3 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #001f4d;
+}
+
+.chauffeur-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.chauffeur-features ul li {
+  font-size: 18px;
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 30px;
+  text-align: left;
+  color: #001f4d;
+}
+
+.chauffeur-features ul li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #001f4d;
+}
+
+.chauffeur-cta {
+  text-align: center;
+  margin-top: 60px; /* Moved button down */
+}
+
+.chauffeur-cta p {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #001f4d, #003366);
+  color: #fff;
+  padding: 16px 45px;
+  font-size: 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.4s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #003366, #001f4d);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transform: scale(1.05);
+}
+</style>
+
+<body>
+  <header class="header">
+  <div class="logo">
+    <img src="image/logo.jpg" alt="">
+  </div>
+  <div class="menu-icon" onclick="toggleMenu()"><i class='bx bx-menu-alt-right'></i></div>
+
+  <nav class="navbar">
+  <a class="active" href="index.html">Home</a>
+  <a href="#">About Us</a>
+  <a href="#">Flights</a>
+  <div class="dropdown" id="visaDropdown">
+    <a href="#" class="vdropbtn">Visa & Insurance ▾</a>
+    <div class="dropdown-content">
+      <a href="Travel_insurance.html">Travel Insurance</a>
+      <a href="visa.html">Visa Assistance </a>
+      
+    </div>
+
+  </div>
+  
+
+  <!-- Dropdown -->
+  <div class="dropdown" id="tourDropdown">
+    <a href="#" class="dropbtn">Tours ▾</a>
+    <div class="dropdown-content">
+      <a href="#">Inbound Tours</a>
+      <a href="#">Outbound Tours</a>
+      <a href="#">Custom Tour Packages</a>
+    </div>
+  </div>
+
+  <a href="#">Packages</a>
+  <a href="#">Chauffeur-Drive</a>
+  <a href="destination.html">Destinations</a>
+  <a href="#">Contact</a>
+</nav>
+
+
+     <div class="sidebar">
+    <div class="close-icon" onclick="toggleMenu()">
+    <i class='bx bx-x'></i>
+  </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#exclusive-deals">Exclusive Deals</a></li>
+        <li class="mobile-dropdown">
+          <a href="#" onclick="toggleDropdown(event)">Services ▾</a>
+          <ul class="mobile-submenu">
+            <li><a href="#">Inbound Tours</a></li>
+            <li><a href="#">Outbound Tours</a></li>
+            <li><a href="#">Custom Tour Packages</a></li>
+          </ul>
+        </li>
+        <li><a href="destination.html">Popular Destinations</a></li>
+        <li><a href="destination.html">Chauffeur-Drive</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- ✅ Overlay -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+    </div>
+  
+</header>
+<section id="chauffeur-drive" class="chauffeur-drive-section">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="section-header">
+      <h2>Chauffeur Drive Services</h2>
+      <p>Travel in ultimate comfort and style with our professional chauffeur services. From airport transfers to city tours, choose your ideal vehicle.</p>
+    </div>
+
+    <!-- Vehicle Options -->
+    <div class="vehicle-options">
+      <!-- Audi A6 -->
+      <div class="vehicle-card">
+        <div class="badge">Luxury</div>
+        <div class="img-wrapper">
+          <img src="image/audi2.jpeg" alt="Audi A6">
+          <div class="overlay">Audi A6</div>
+        </div>
+        <p>Luxury sedan perfect for individuals or couples. Equipped with Wi-Fi, air conditioning, and comfortable interiors for smooth travel.</p>
+      </div>
+
+      <!-- Honda Vezel -->
+      <div class="vehicle-card">
+        <div class="badge">Popular Choice</div>
+        <div class="img-wrapper">
+          <img src="image/vezel.jpeg" alt="Honda Vezel">
+          <div class="overlay">Honda Vezel</div>
+        </div>
+        <p>Comfortable and stylish, ideal for city rides and airport transfers. Spacious interior and advanced safety features ensure a smooth journey.</p>
+      </div>
+
+      <!-- Toyota KDH Super GL -->
+      <div class="vehicle-card">
+        <div class="badge">Family Van</div>
+        <div class="img-wrapper">
+          <img src="image/kdh3.jpeg" alt="Toyota KDH Super GL">
+          <div class="overlay">Toyota KDH Super GL</div>
+        </div>
+        <p>Spacious van for families or small groups. Provides comfort, ample luggage space, and a relaxing travel experience for all passengers.</p>
+      </div>
+
+      <!-- Ankai 6M -->
+      <div class="vehicle-card">
+        <div class="badge">Mini Bus</div>
+        <div class="img-wrapper">
+          <img src="image/bus.jpeg" alt="Ankai 6M">
+          <div class="overlay">Ankai 6M</div>
+        </div>
+        <p>Perfect for group travel or corporate trips. Seats up to 15 passengers comfortably with sufficient luggage space and professional drivers.</p>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="chauffeur-features">
+      <h3>Why Choose Our Chauffeur Services?</h3>
+      <ul>
+        <li><strong>Professional Drivers:</strong> Experienced, licensed, and trained chauffeurs.</li>
+        <li><strong>Flexible Booking:</strong> Hourly, daily, or long-distance trips.</li>
+        <li><strong>Comfort & Safety:</strong> Well-maintained vehicles with modern safety features.</li>
+        <li><strong>24/7 Availability:</strong> Travel anytime, anywhere.</li>
+        <li><strong>Customizable Routes:</strong> Choose stops and itinerary without hassle.</li>
+      </ul>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="chauffeur-cta">
+      <p>Book your chauffeur-driven vehicle today and enjoy a luxurious, stress-free travel experience!</p>
+      <a href="#contact" class="btn-primary">Book Now</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

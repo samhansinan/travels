@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Tours | DP Travels</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="tour.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="logo">
+    <img src="image/logo.jpg" alt="DP Travels">
+  </div>
+  <div class="menu-icon" onclick="toggleMenu()"><i class='bx bx-menu-alt-right'></i></div>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Flights</a>
+    <div class="dropdown" id="visaDropdown">
+      <a href="#" class="vdropbtn">Visa & Insurance ▾</a>
+      <div class="dropdown-content">
+        <a href="#">Travel Insurance</a>
+        <a href="#">Visa Assistance</a>
+      </div>
+    </div>
+
+    <div class="dropdown" id="tourDropdown">
+      <a href="#" class="dropbtn">Tours ▾</a>
+      <div class="dropdown-content">
+        <a href="#inbound">Inbound Tours</a>
+        <a href="#outbound">Outbound Tours</a>
+        <a href="#custom">Custom Tour Packages</a>
+      </div>
+    </div>
+
+    <a href="#">Packages</a>
+    <a href="destination.html">Destinations</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="sidebar">
+    <div class="close-icon" onclick="toggleMenu()">
+      <i class='bx bx-x'></i>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li class="mobile-dropdown">
+        <a href="#" onclick="toggleDropdown(event)">Tours ▾</a>
+        <ul class="mobile-submenu">
+          <li><a href="#inbound">Inbound Tours</a></li>
+          <li><a href="#outbound">Outbound Tours</a></li>
+          <li><a href="#custom">Custom Packages</a></li>
+        </ul>
+      </li>
+      <li><a href="destination.html">Destinations</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <div class="overlay" onclick="toggleMenu()"></div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Discover Our Tours</h1>
+    <p>From exploring Sri Lanka's hidden gems to international adventures,<br>we craft unforgettable journeys tailored just for you</p>
+  </div>
+</section>
+
+<!-- Tour Navigation Tabs -->
+ <div class="tour-tabs">
+    <button class="tab-btn active" onclick="openTour('inbound')">Inbound</button>
+    <button class="tab-btn" onclick="openTour('outbound')">Outbound</button>
+    <button class="tab-btn" onclick="openTour('custom')">Custom</button>
+  </div>
+
+
+<!-- Inbound Tours -->
+<section class="tour-section active" id="inbound">
+  <div class="section-header">
+    <h2>Inbound Tours - Explore Sri Lanka</h2>
+    <p>Discover the pearl of the Indian Ocean with our expertly curated inbound tours showcasing Sri Lanka's rich culture, stunning landscapes, and warm hospitality</p>
+  </div>
+
+  <div class="tour-grid">
+    <div class="tour-card">
+      <div class="tour-image">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600" alt="Cultural Triangle">
+        <span class="tour-badge">7 Days</span>
+      </div>
+      <div class="tour-content">
+        <h3 class="tour-title">Cultural Triangle Explorer</h3>
+        <p class="tour-description">Immerse yourself in Sri Lanka's ancient heritage visiting Sigiriya, Polonnaruwa, and Dambulla's magnificent cave temples.</p>
+        <div class="tour-features">
+          <div class="feature-item">
+            <i class='bx bx-map'></i>
+            <span>5 UNESCO Sites</span>
+          </div>
+          <div class="feature-item">
+            <i class='bx bx-hotel'></i>
+            <span>4-Star Hotels</span>
+          </div>
+          <div class="feature-item">
+            <i class='bx bx-food-menu'></i>
+            <span>All Meals</span>
+          </div>
+        </div>
+        <div class="tour-footer">
+          <div class="tour-price">$899<span>/person</span></div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <div class="tour-image">
+        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600" alt="Beach Paradise">
+        <span class="tour-badge">5 Days</span>
+      </div>
+      <div class="tour-content">
+        <h3 class="tour-title">Beach Paradise Getaway</h3>
+        <p class="tour-description">Relax on pristine beaches in Bentota, Mirissa, and Unawatuna with water sports, whale watching, and sunset cruises.</p>
+        <div class="tour-features">
+          <div class="feature-item">
+            <i class='bx bx-swim'></i>
+            <span>Beach Activities</span>
+          </div>
+          <div class="feature-item">
+            <i class='bx bx-spa'></i>
+            <span>Spa Included</span>
+          </div>
+          <div class="feature-item">
+            <i class='bx bx-camera'></i>
+            <span>Photo Tours</span>
+          </div>
+        </div>
+        <div class="tour-footer">
+          <div class="tour-price">$749<span>/person</span></div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <div class="tour-image">
+        <img src="https://images.unsplash.com/photo-1585159812596-fac104f2f069?w=600" alt="Wildlife Safari">
+        <span class="tour-badge">6 Days</span>
+      </div>
+      <div class="tour-content">
+        <h3 class="tour-title">Wildlife Safari Adventure</h3>
+        <p class="tour-description">Experience thrilling safaris in Yala and Udawalawe, spotting elephants, leopards, and diverse birdlife in natural habitats.</p>
+        <div class="tour-features">
+          <div class="feature-item">
+            <i class='bx bx-world'></i>
+            <span>3 National Parks</span>
+          </div>
+          <div class="feature-item">
+            <i class='bx bx-car'></i>
+            <span>Jeep Safaris</span>
+          </div>
+          <div class="feature-item">
+            <i class='bx bx-user-voice'></i>
+            <span>Expert Guide</span>
+          </div>
+        </div>
+        <div class="tour-footer">
+          <div class="tour-price">$949<span>/person</span></div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <div class="tour-image">
+        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Hill Country">
+        <span class="tour-badge">4 Days</span>
+      </div>
+      <div class="tour-content">
+        <h3 class="tour-title">Hill Country Tea Trails</h3>
+        <p class="tour-description">Journey through misty mountains visiting Kandy, Nuwara Eliya, and Ella with scenic train rides and tea plantation tours.</p>
+        <div class="tour-features">
+          <div class="feature-item">
+            <i class='bx bx-train'></i>
+            <span>Train Journey</span>
+          </div>
+          <div class="feature-item">
+            <i class='bx bx-coffee'></i>
+            <span>Tea Factory Visit</span>
+          </div>
+          <div class="feature-item">
+            <i class='bx bx-mountain'></i>
+            <span>Hiking Trails</span>
+          </div>
+        </div>
+        <div class="tour-footer">
+          <div class="tour-price">$649<span>/person</span></div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Outbound Tours -->
+<section class="tour-section" id="outbound">
+  <div class="section-header">
+    <h2>Outbound Tours - Explore the World</h2>
+    <p>Embark on extraordinary international adventures to iconic destinations across Asia, Europe, and the Middle East with our carefully planned outbound tours.</p>
+  </div>
+
+  <div class="tour-grid">
+    <div class="tour-card">
+      <div class="tour-image">
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600" alt="Paris">
+        <span class="tour-badge">6 Days</span>
+      </div>
+      <div class="tour-content">
+        <h3 class="tour-title">Romantic Paris & Switzerland</h3>
+        <p class="tour-description">Explore the city of love and the breathtaking Swiss Alps with guided city tours, cruises, and scenic rail journeys.</p>
+        <div class="tour-features">
+          <div class="feature-item"><i class='bx bx-map'></i>2 Countries</div>
+          <div class="feature-item"><i class='bx bx-hotel'></i>Luxury Hotels</div>
+          <div class="feature-item"><i class='bx bx-camera'></i>Sightseeing</div>
+        </div>
+        <div class="tour-footer">
+          <div class="tour-price">$2,499<span>/person</span></div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <div class="tour-image">
+        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600" alt="Dubai">
+        <span class="tour-badge">5 Days</span>
+      </div>
+      <div class="tour-content">
+        <h3 class="tour-title">Dubai Luxury Escape</h3>
+        <p class="tour-description">Experience luxury shopping, desert safaris, Burj Khalifa visits, and dhow cruises in dazzling Dubai.</p>
+        <div class="tour-features">
+          <div class="feature-item"><i class='bx bx-building'></i>City Tours</div>
+          <div class="feature-item"><i class='bx bx-sun'></i>Desert Safari</div>
+          <div class="feature-item"><i class='bx bx-ship'></i>Dhow Cruise</div>
+        </div>
+        <div class="tour-footer">
+          <div class="tour-price">$1,599<span>/person</span></div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tour-card">
+      <div class="tour-image">
+        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600" alt="Tokyo">
+        <span class="tour-badge">7 Days</span>
+      </div>
+      <div class="tour-content">
+        <h3 class="tour-title">Japan Highlights Tour</h3>
+        <p class="tour-description">Discover Tokyo, Kyoto, and Osaka with cultural experiences, bullet trains, and historic temples.</p>
+        <div class="tour-features">
+          <div class="feature-item"><i class='bx bx-train'></i>Bullet Train</div>
+          <div class="feature-item"><i class='bx bx-landscape'></i>Cultural Sites</div>
+          <div class="feature-item"><i class='bx bx-user-voice'></i>Tour Guide</div>
+        </div>
+        <div class="tour-footer">
+          <div class="tour-price">$2,899<span>/person</span></div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Tour Packages -->
+<section class="tour-section" id="custom">
+  <div class="section-header">
+    <h2>Custom Tour Packages</h2>
+    <p>Create your own personalized journey tailored to your preferences, budget, and travel style.</p>
+  </div>
+
+  <div class="custom-tour-content">
+    <div class="custom-features">
+      <div class="custom-feature">
+        <i class='bx bx-edit'></i>
+        <h3>Tailor-Made Itineraries</h3>
+        <p>Design your trip exactly how you want, from destinations to daily activities.</p>
+      </div>
+
+      <div class="custom-feature">
+        <i class='bx bx-wallet'></i>
+        <h3>Flexible Budget</h3>
+        <p>We create travel plans that suit your budget without compromising on experience.</p>
+      </div>
+
+      <div class="custom-feature">
+        <i class='bx bx-support'></i>
+        <h3>24/7 Support</h3>
+        <p>Our travel experts are available around the clock to assist you anytime.</p>
+      </div>
+    </div>
+
+    <div class="custom-cta">
+      <h3>Plan Your Dream Tour Today</h3>
+      <p>Contact us now and let us turn your travel dreams into reality.</p>
+      <a href="#contact" class="contact-btn">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript -->
+<script>
+ 
+  function openTour(id) {
+  document.querySelectorAll('.tour-section').forEach(sec =>
+    sec.classList.remove('active')
+  );
+
+  document.querySelectorAll('.tab-btn').forEach(btn =>
+    btn.classList.remove('active')
+  );
+
+  document.getElementById(id).classList.add('active');
+
+  const map = { inbound: 0, outbound: 1, custom: 2 };
+  document.querySelectorAll('.tab-btn')[map[id]].classList.add('active');
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash.replace("#", "");
+  if (hash) openTour(hash);
+});
+
+  function toggleDropdown(e) {
+  e.preventDefault();
+  e.target.parentElement.classList.toggle("active");
+}
+// toggle
+ function toggleMenu() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+    
+    menuIcon.classList.toggle('active');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+  }
+
+const dropdown = document.getElementById("tourDropdown");
+
+dropdown.querySelector(".dropbtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  dropdown.classList.toggle("active");
+});
+
+/* Close dropdown when clicking outside */
+document.addEventListener("click", function (e) {
+  if (!dropdown.contains(e.target)) {
+    dropdown.classList.remove("active");
+  }
+});
+</script>
+
+</body>
+</html>

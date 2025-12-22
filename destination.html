@@ -36,14 +36,16 @@
   
 
   <!-- Dropdown -->
-  <div class="dropdown" id="tourDropdown">
-    <a href="#" class="dropbtn">Tours ▾</a>
-    <div class="dropdown-content">
-      <a href="#">Inbound Tours</a>
-      <a href="#">Outbound Tours</a>
-      <a href="#">Custom Tour Packages</a>
-    </div>
+ <div class="dropdown" id="tourDropdown">
+  <a href="#" class="dropbtn">Tours ▾</a>
+  <div class="dropdown-content">
+    <a href="tour.html#inbound">Inbound Tours</a>
+    <a href="tour.html#outbound">Outbound Tours</a>
+    <a href="tour.html#custom">Custom Tour Packages</a>
   </div>
+</div>
+
+
 
   <a href="#">Packages</a>
   <a href="destination.html">Destinations</a>
@@ -343,6 +345,46 @@ document.addEventListener("click", function (e) {
     }, 800);
 
   }, 3000); // change every 6 seconds
+
+
+  
+document.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash.replace("#", "");
+
+  if (hash) {
+    openTour(hash);
+  }
+});
+
+function openTour(id) {
+  const section = document.getElementById(id);
+  if (!section) return;
+
+  // hide all sections
+  document.querySelectorAll('.tour-section').forEach(sec =>
+    sec.classList.remove('active')
+  );
+
+  // deactivate tabs
+  document.querySelectorAll('.tab-btn').forEach(btn =>
+    btn.classList.remove('active')
+  );
+
+  // show section
+  section.classList.add('active');
+
+  // activate tab
+  const map = { inbound: 0, outbound: 1, custom: 2 };
+  const tabs = document.querySelectorAll('.tab-btn');
+
+  if (tabs[map[id]]) {
+    tabs[map[id]].classList.add('active');
+  }
+
+  document.querySelector('.tour-tabs')?.scrollIntoView({
+    behavior: "smooth"
+  });
+}
 </script>
 
 </body>
