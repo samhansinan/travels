@@ -22,13 +22,13 @@
 
   <nav class="navbar">
   <a class="active" href="index.html">Home</a>
-  <a href="#">About Us</a>
-  <a href="#">Flights</a>
+  <a href="#about">About Us</a>
+  <a href="flightpage.html">Flights</a>
   <div class="dropdown" id="visaDropdown">
     <a href="#" class="vdropbtn">Visa & Insurance ▾</a>
     <div class="dropdown-content">
-      <a href="#">Travel Insurance</a>
-      <a href="#">Visa Assistance </a>
+      <a href="Travel_insurance.html">Travel Insurance</a>
+      <a href="visa.html">Visa Assistance </a>
       
     </div>
 
@@ -45,30 +45,39 @@
   </div>
 </div>
 
+  <a href="#package">Packages</a>
+  <a href="cheffeur.html">Chauffeur-Drive</a>
+  
+  <a href="#contact">Contact</a>
 
-
-  <a href="#">Packages</a>
-  <a href="destination.html">Destinations</a>
-  <a href="#">Contact</a>
 </nav>
 
 
-     <div class="sidebar">
+  <div class="sidebar">
     <div class="close-icon" onclick="toggleMenu()">
     <i class='bx bx-x'></i>
   </div>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#exclusive-deals">Exclusive Deals</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#exclusive-deals">About Us</a></li>
+        <li><a href="#">Flights</a></li>
         <li class="mobile-dropdown">
-          <a href="#" onclick="toggleDropdown(event)">Services ▾</a>
-          <ul class="mobile-submenu">
-            <li><a href="#">Inbound Tours</a></li>
-            <li><a href="#">Outbound Tours</a></li>
-            <li><a href="#">Custom Tour Packages</a></li>
-          </ul>
-        </li>
-        <li><a href="destination.html">Popular Destinations</a></li>
+        <a href="#" onclick="toggleDropdown(event)">Visa & Insurance ▾</a>
+        <ul class="mobile-submenu">
+          <li><a href="Travel_insurance.html">Travel Insurance</a></li>
+          <li><a href="visa.html">Visa Assistance</a></li>
+        </ul>
+      </li>
+        <li class="mobile-dropdown">
+    <a href="#" onclick="toggleDropdown(event)">Tours ▾</a>
+    <ul class="mobile-submenu">
+      <li><a href="tour.html#inbound">Inbound Tours</a></li>
+      <li><a href="tour.html#outbound">Outbound Tours</a></li>
+      <li><a href="tour.html#custom">Custom Tour Packages</a></li>
+    </ul>
+  </li>
+        <li><a href="flightpage.html">Package</a></li>
+        <li><a href="destination.html">Chauffeur-Drive</a></li>
         <li><a href="#contact">Contact Us</a></li>
       </ul>
     </div>
@@ -89,6 +98,114 @@
 </div>
 </section>
 
+
+
+
+
+
+<!-- ================= DESTINATIONS GRID ================= -->
+
+<section class="popular-section">
+  <div class="section-header">
+    <h2>Popular Flight Destinations</h2>
+    <p>Discover our most sought-after destinations with great deals and flexible booking options</p>
+  </div>
+
+  <div class="destinations-grid">
+    <div class="destination-card">
+      <div class="destination-image">
+        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600" alt="London">
+        <span class="price-badge">From $899</span>
+      </div>
+      <div class="destination-content">
+        <h3 class="destination-title">
+          <i class='bx bx-map'></i>
+          London, UK
+        </h3>
+        <div class="destination-info">
+          <div class="info-item">
+            <i class='bx bx-time'></i>
+            <span>12h 30m</span>
+          </div>
+          <div class="info-item">
+            <i class='bx bx-calendar'></i>
+            <span>Direct Flights</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="destination-card">
+      <div class="destination-image">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600" alt="Dubai">
+        <span class="price-badge">From $549</span>
+      </div>
+      <div class="destination-content">
+        <h3 class="destination-title">
+          <i class='bx bx-map'></i>
+          Dubai, UAE
+        </h3>
+        <div class="destination-info">
+          <div class="info-item">
+            <i class='bx bx-time'></i>
+            <span>4h 45m</span>
+          </div>
+          <div class="info-item">
+            <i class='bx bx-calendar'></i>
+            <span>Multiple Daily</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="destination-card">
+      <div class="destination-image">
+        <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=600" alt="Singapore">
+        <span class="price-badge">From $649</span>
+      </div>
+
+            <div class="destination-content">
+        <h3 class="destination-title">
+          <i class='bx bx-map'></i>
+          Singapore
+        </h3>
+        <div class="destination-info">
+          <div class="info-item">
+            <i class='bx bx-time'></i>
+            <span>4h 10m</span>
+          </div>
+          <div class="info-item">
+            <i class='bx bx-calendar'></i>
+            <span>Daily Flights</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="destination-card">
+      <div class="destination-image">
+        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=600" alt="Australia">
+        <span class="price-badge">From $999</span>
+      </div>
+      <div class="destination-content">
+        <h3 class="destination-title">
+          <i class='bx bx-map'></i>
+          Sydney, Australia
+        </h3>
+        <div class="destination-info">
+          <div class="info-item">
+            <i class='bx bx-time'></i>
+            <span>10h 20m</span>
+          </div>
+          <div class="info-item">
+            <i class='bx bx-calendar'></i>
+            <span>Direct Available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ================= FILTER + AD WRAPPER ================= -->
 <section class="filter-wrapper">
@@ -112,10 +229,6 @@
 
 
 </section>
-
-
-
-<!-- ================= DESTINATIONS GRID ================= -->
 <section class="destination-wrapper">
 
   <!-- LEFT: Destination Cards -->
@@ -179,6 +292,55 @@
 
 </section>
 
+
+<section class="features-section">
+  <div class="section-header">
+    <h2>Why Choose DP Travels</h2>
+    <p>Experience seamless flight booking with trusted airline partners and expert support</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon"><i class='bx bx-globe'></i></div>
+      <h3>Global Coverage</h3>
+      <p>Flights to over 200 destinations worldwide with competitive pricing.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon"><i class='bx bx-support'></i></div>
+      <h3>24/7 Support</h3>
+      <p>Our travel experts are available anytime to assist you.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon"><i class='bx bx-lock'></i></div>
+      <h3>Secure Booking</h3>
+      <p>Safe and encrypted transactions for peace of mind.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon"><i class='bx bx-money'></i></div>
+      <h3>Best Price Guarantee</h3>
+      <p>Get the best deals with transparent pricing and no hidden fees.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Airlines Partners -->
+<section class="airlines-section">
+  <div class="section-header">
+    <h2>Our Airline Partners</h2>
+    <p>We work with the world’s leading airlines</p>
+  </div>
+
+  <div class="airlines-grid">
+    <div class="airline-logo"><img src="image/emirate.png" alt="Emirates"></div>
+    <div class="airline-logo"><img src="image/qatar.png" alt="Qatar Airways"></div>
+    <div class="airline-logo"><img src="image/srilnakan.png" alt="SriLankan Airlines"></div>
+    <div class="airline-logo"><img src="image/singapore-flag.png" alt="Singapore Airlines"></div>
+    <div class="airline-logo"><img src="image/ethihadh.png" alt="Etihad"></div>
+  </div>
+</section>
 
 
 <footer>

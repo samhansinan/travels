@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="visa.css">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DP Travels | Visa Assistance</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="visa.css">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<style>
+
+</style>
 </head>
 <body>
-    <header class="header">
+<header class="header">
   <div class="logo">
     <img src="image/logo.jpg" alt="">
   </div>
@@ -16,8 +26,8 @@
 
   <nav class="navbar">
   <a class="active" href="index.html">Home</a>
-  <a href="#">About Us</a>
-  <a href="#">Flights</a>
+  <a href="#about">About Us</a>
+  <a href="flightpage.html">Flights</a>
   <div class="dropdown" id="visaDropdown">
     <a href="#" class="vdropbtn">Visa & Insurance ▾</a>
     <div class="dropdown-content">
@@ -30,38 +40,47 @@
   
 
   <!-- Dropdown -->
-  <div class="dropdown" id="tourDropdown">
-    <a href="#" class="dropbtn">Tours ▾</a>
-    <div class="dropdown-content">
-      <a href="#">Inbound Tours</a>
-      <a href="#">Outbound Tours</a>
-      <a href="#">Custom Tour Packages</a>
-    </div>
+ <div class="dropdown" id="tourDropdown">
+  <a href="#" class="dropbtn">Tours ▾</a>
+  <div class="dropdown-content">
+    <a href="tour.html#inbound">Inbound Tours</a>
+    <a href="tour.html#outbound">Outbound Tours</a>
+    <a href="tour.html#custom">Custom Tour Packages</a>
   </div>
+</div>
 
-  <a href="#">Packages</a>
-  <a href="#">Chauffeur-Drive</a>
-  <a href="destination.html">Destinations</a>
-  <a href="#">Contact</a>
+  <a href="#package">Packages</a>
+  <a href="cheffeur.html">Chauffeur-Drive</a>
+  
+  <a href="#contact">Contact</a>
+
 </nav>
 
 
-     <div class="sidebar">
+  <div class="sidebar">
     <div class="close-icon" onclick="toggleMenu()">
     <i class='bx bx-x'></i>
   </div>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="#exclusive-deals">Exclusive Deals</a></li>
+        <li><a href="#exclusive-deals">About Us</a></li>
+        <li><a href="#">Flights</a></li>
         <li class="mobile-dropdown">
-          <a href="#" onclick="toggleDropdown(event)">Services ▾</a>
-          <ul class="mobile-submenu">
-            <li><a href="#">Inbound Tours</a></li>
-            <li><a href="#">Outbound Tours</a></li>
-            <li><a href="#">Custom Tour Packages</a></li>
-          </ul>
-        </li>
-        <li><a href="destination.html">Popular Destinations</a></li>
+        <a href="#" onclick="toggleDropdown(event)">Visa & Insurance ▾</a>
+        <ul class="mobile-submenu">
+          <li><a href="Travel_insurance.html">Travel Insurance</a></li>
+          <li><a href="visa.html">Visa Assistance</a></li>
+        </ul>
+      </li>
+        <li class="mobile-dropdown">
+    <a href="#" onclick="toggleDropdown(event)">Tours ▾</a>
+    <ul class="mobile-submenu">
+      <li><a href="tour.html#inbound">Inbound Tours</a></li>
+      <li><a href="tour.html#outbound">Outbound Tours</a></li>
+      <li><a href="tour.html#custom">Custom Tour Packages</a></li>
+    </ul>
+  </li>
+        <li><a href="flightpage.html">Package</a></li>
         <li><a href="destination.html">Chauffeur-Drive</a></li>
         <li><a href="#contact">Contact Us</a></li>
       </ul>
@@ -72,77 +91,63 @@
     </div>
   
 </header>
-    <!-- ===== VISA & INSURANCE MAIN SECTION ===== -->
-<section id="visa-insurance" class="visa-insurance-section">
+<section class="dp-service-page">
   <div class="container">
-    <!-- Section Heading -->
-    <div class="section-header">
-      <h2>Visa & Insurance Services</h2>
-      <p>Professional services to make your international travel safe, seamless, and hassle-free.</p>
+
+    <!-- HERO -->
+    <div class="service-hero">
+      <span class="badge">Global Mobility Services</span>
+      <h1>World-Class <span class="gold">Visa Assistance</span></h1>
+      <p>
+        Navigating international borders shouldn’t be a burden. DP Travels delivers
+        professional visa consultation and documentation services for 150+ destinations worldwide.
+      </p>
     </div>
 
-    <!-- Navigation Dropdown -->
-    <div class="visa-nav">
-      <button class="nav-btn active" data-target="visa-assistance">
-        Visa Assistance
-      </button>
-      <button class="nav-btn" data-target="travel-insurance">
-        Travel Insurance
-      </button>
-    </div>
+    <!-- EXPERTISE -->
+    <div class="expertise-grid">
+      <div class="exp-card">
+        <div class="exp-icon"><i class="fa-solid fa-passport"></i></div>
+        <h3>Tourist Visas</h3>
+        <p>Complete support for leisure travel including e-Visas and embassy submissions.</p>
+      </div>
 
-    <!-- Visa Assistance Content -->
-    <div id="visa-assistance" class="visa-content active">
-      <div class="content-wrapper">
-        <div class="content-img">
-          <img src="image/visa_assis.jpeg" alt="Visa Assistance">
-        </div>
-        <div class="content-text">
-          <h3>Visa Assistance</h3>
-          <p>Get expert help with visas for any country. Our services include:</p>
-          <ul>
-            <li>Documentation preparation and review</li>
-            <li>Visa application submission and tracking</li>
-            <li>Guidance on travel requirements and compliance</li>
-            <li>Fast processing for urgent travel needs</li>
-            <li>Personalized consultation for complex visa cases</li>
-            <li>Assistance with business, student, and tourist visas</li>
-          </ul>
-          <h4>Why Choose Our Visa Assistance?</h4>
-          <ul>
-            <li>Experienced visa consultants with up-to-date knowledge</li>
-            <li>Step-by-step guidance to avoid delays or rejections</li>
-            <li>Multiple country visa support with simplified procedures</li>
-          </ul>
-          <p>Our team ensures that your visa process is smooth and stress-free, helping you travel with confidence. <strong>We handle the complex procedures, so you can focus on planning your trip.</strong></p>
-        </div>
+      <div class="exp-card">
+        <div class="exp-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <h3>Business & MICE</h3>
+        <p>Fast-tracked visa solutions for corporate travelers and conference delegations.</p>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h3>Student Visas</h3>
+        <p>End-to-end document verification for students pursuing global education.</p>
       </div>
     </div>
 
-    <!-- Travel Insurance Content -->
-    <div id="travel-insurance" class="visa-content">
-      <div class="content-wrapper">
-        <div class="content-img">
-          <img src="image/travel_insuran.jpeg" alt="Travel Insurance">
-        </div>
-        <div class="content-text">
-          <h3>Travel Insurance</h3>
-          <p>Comprehensive coverage to protect you during your travels, including:</p>
-          <ul>
-            <li>Medical emergencies and hospitalization</li>
-            <li>Trip cancellations or delays</li>
-            <li>Lost, stolen, or damaged luggage</li>
-            <li>24/7 travel assistance services</li>
-            <li>Coverage for adventure sports and high-risk activities</li>
-            <li>Emergency evacuation and repatriation</li>
-          </ul>
-          <h4>Benefits of Our Travel Insurance</h4>
-          <ul>
-            <li>Peace of mind during international trips</li>
-            <li>Easy claims process with prompt support</li>
-            <li>Flexible plans to suit short trips or long vacations</li>
-          </ul>
-          <p>Travel with confidence knowing that our insurance plans cover unexpected events. <strong>Our experts ensure that you are fully protected so your focus stays on enjoying the journey.</strong></p>
+    <!-- DETAILS -->
+    <div class="detailed-layout">
+      <div class="detail-image">
+        <img src="image/visa_assis.jpeg" alt="DP Travels Visa Assistance">
+      </div>
+
+      <div class="detail-text">
+        <h2>The DP Visa Process</h2>
+        <p>
+          Our certified consultants manage every stage of the visa journey while keeping you
+          informed and confident throughout the process.
+        </p>
+
+        <ul class="pro-list">
+          <li><strong>Document Auditing:</strong> Error-free checks to reduce rejection risks.</li>
+          <li><strong>Appointment Booking:</strong> Guaranteed embassy & VFS slot handling.</li>
+          <li><strong>Interview Preparation:</strong> Personalized guidance for visa interviews.</li>
+          <li><strong>Global Network:</strong> Trusted partners across major international hubs.</li>
+        </ul>
+
+        <div class="cta-box">
+          <p>Need urgent visa processing?</p>
+          <a href="#" class="btn-gold-fill">Start Application</a>
         </div>
       </div>
     </div>
@@ -150,30 +155,24 @@
   </div>
 </section>
 
-<!-- ===== VISA & INSURANCE STYLES ===== -->
 
 <script>
-const navButtons = document.querySelectorAll('.nav-btn');
-const contents = document.querySelectorAll('.visa-content');
+  function toggleMenu() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+    
+    menuIcon.classList.toggle('active');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+  }
 
-navButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const target = btn.getAttribute('data-target');
-
-    navButtons.forEach(b => b.classList.remove('active'));
-    contents.forEach(c => c.classList.remove('active'));
-
-    btn.classList.add('active');
-    document.getElementById(target).classList.add('active');
-  });
-});
-
-  // drop d
+    // drop d
   function toggleDropdown(e) {
   e.preventDefault();
   e.target.parentElement.classList.toggle("active");
 }
-
+  // 1
 const dropdown = document.getElementById("tourDropdown");
 
 dropdown.querySelector(".dropbtn").addEventListener("click", function (e) {
@@ -188,16 +187,21 @@ document.addEventListener("click", function (e) {
   }
 });
 
- function toggleMenu() {
-    const menuIcon = document.querySelector('.menu-icon');
-    const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.overlay');
-    
-    menuIcon.classList.toggle('active');
-    sidebar.classList.toggle('active');
-    overlay.classList.toggle('active');
-  }
-</script>
 
+// 2
+const dropdown1 = document.getElementById("visaDropdown");
+
+dropdown1.querySelector(".vdropbtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  dropdown1.classList.toggle("active");
+});
+
+/* Close dropdown when clicking outside */
+document.addEventListener("click", function (e) {
+  if (!dropdown1.contains(e.target)) {
+    dropdown1.classList.remove("active");
+  }
+});
+</script>
 </body>
 </html>

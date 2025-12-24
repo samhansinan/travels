@@ -21,8 +21,8 @@
 
   <nav class="navbar">
   <a class="active" href="#">Home</a>
-  <a href="#">About Us</a>
-  <a href="#">Flights</a>
+  <a href="#about">About Us</a>
+  <a href="flightpage.html">Flights</a>
   <div class="dropdown" id="visaDropdown">
     <a href="#" class="vdropbtn">Visa & Insurance ▾</a>
     <div class="dropdown-content">
@@ -35,40 +35,48 @@
   
 
   <!-- Dropdown -->
-  <div class="dropdown" id="tourDropdown">
-    <a href="#" class="dropbtn">Tours ▾</a>
-    <div class="dropdown-content">
-      <a href="#">Inbound Tours</a>
-      <a href="#">Outbound Tours</a>
-      <a href="#">Custom Tour Packages</a>
-    </div>
+ <div class="dropdown" id="tourDropdown">
+  <a href="#" class="dropbtn">Tours ▾</a>
+  <div class="dropdown-content">
+    <a href="tour.html#inbound">Inbound Tours</a>
+    <a href="tour.html#outbound">Outbound Tours</a>
+    <a href="tour.html#custom">Custom Tour Packages</a>
   </div>
+</div>
 
-  <a href="#">Packages</a>
+  <a href="#package">Packages</a>
   <a href="cheffeur.html">Chauffeur-Drive</a>
-  <a href="destination.html">Destinations</a>
-  <a href="#">Contact</a>
+  
+  <a href="#contact">Contact</a>
 
 </nav>
 
 
-     <div class="sidebar">
+  <div class="sidebar">
     <div class="close-icon" onclick="toggleMenu()">
     <i class='bx bx-x'></i>
   </div>
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#exclusive-deals">Exclusive Deals</a></li>
+        <li><a href="#exclusive-deals">About Us</a></li>
+        <li><a href="flightpage.html">Flights</a></li>
         <li class="mobile-dropdown">
-          <a href="#" onclick="toggleDropdown(event)">Services ▾</a>
-          <ul class="mobile-submenu">
-            <li><a href="#">Inbound Tours</a></li>
-            <li><a href="#">Outbound Tours</a></li>
-            <li><a href="#">Custom Tour Packages</a></li>
-          </ul>
-        </li>
-        <li><a href="destination.html">Popular Destinations</a></li>
-        <li><a href="destination.html">Chauffeur-Drive</a></li>
+        <a href="#" onclick="toggleDropdown(event)">Visa & Insurance ▾</a>
+        <ul class="mobile-submenu">
+          <li><a href="Travel_insurance.html">Travel Insurance</a></li>
+          <li><a href="visa.html">Visa Assistance</a></li>
+        </ul>
+      </li>
+        <li class="mobile-dropdown">
+    <a href="#" onclick="toggleDropdown(event)">Tours ▾</a>
+    <ul class="mobile-submenu">
+      <li><a href="tour.html#inbound">Inbound Tours</a></li>
+      <li><a href="tour.html#outbound">Outbound Tours</a></li>
+      <li><a href="tour.html#custom">Custom Tour Packages</a></li>
+    </ul>
+  </li>
+        <li><a href="flightpage.html">Package</a></li>
+        <li><a href="cheffeur.html">Chauffeur-Drive</a></li>
         <li><a href="#contact">Contact Us</a></li>
       </ul>
     </div>
@@ -80,7 +88,17 @@
 </header>
 
 <section class="hero">
-  <img src="image/London.jpg" class="hero-img">
+  <!-- Slider Images -->
+  <div class="hero-slider">
+    <img src="image/London.jpg" class="hero-img active">
+    <img src="image/main3.jpg" class="hero-img">
+    <img src="image/main4.jpg" class="hero-img">
+    <img src="image/main5.jpg" class="hero-img">
+  </div>
+
+  <!-- Left & Right Buttons -->
+  <button class="slider-btn left" onclick="prevSlide()">❮</button>
+  <button class="slider-btn right" onclick="nextSlide()">❯</button>
 
   <div class="hero-text">
     <h1>Find Your Next Adventure</h1>
@@ -159,7 +177,7 @@
 </div>
 </section>
 <section>
-  <div class="Popular-pakage">
+  <div class="Popular-pakage" id="package">
     <h1>POPULAR PAKAGES</h1>
 <p class="explore-link"><button id="showMoreBtn">Explore More <i class='bx bx-right-top-arrow-circle'></i></button></p>
     <div class="pakage-boxes">
@@ -720,9 +738,9 @@
 <script>
 
   // drop d
-  function toggleDropdown(e) {
+function toggleDropdown(e) {
   e.preventDefault();
-  e.target.parentElement.classList.toggle("active");
+  e.currentTarget.parentElement.classList.toggle("active");
 }
 
 
@@ -733,7 +751,12 @@ dropdown.querySelector(".dropbtn").addEventListener("click", function (e) {
   e.preventDefault();
   dropdown.classList.toggle("active");
 });
-
+// slide drop
+document.addEventListener("click", function (e) {
+  if (!e.target.closest(".dropdown")) {
+    document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("active"));
+  }
+});
 /* Close dropdown when clicking outside */
 document.addEventListener("click", function (e) {
   if (!dropdown.contains(e.target)) {
@@ -755,6 +778,44 @@ document.addEventListener("click", function (e) {
     dropdown1.classList.remove("active");
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash.replace("#", "");
+
+  if (hash) {
+    openTour(hash);
+  }
+});
+
+function openTour(id) {
+  const section = document.getElementById(id);
+  if (!section) return;
+
+  // hide all sections
+  document.querySelectorAll('.tour-section').forEach(sec =>
+    sec.classList.remove('active')
+  );
+
+  // deactivate tabs
+  document.querySelectorAll('.tab-btn').forEach(btn =>
+    btn.classList.remove('active')
+  );
+
+  // show section
+  section.classList.add('active');
+
+  // activate tab
+  const map = { inbound: 0, outbound: 1, custom: 2 };
+  const tabs = document.querySelectorAll('.tab-btn');
+
+  if (tabs[map[id]]) {
+    tabs[map[id]].classList.add('active');
+  }
+
+  document.querySelector('.tour-tabs')?.scrollIntoView({
+    behavior: "smooth"
+  });
+}
 // review btn
 const container = document.querySelector(".customer-review");
 const nextBtn = document.querySelector(".next-btn");
@@ -839,6 +900,29 @@ prevBtn.addEventListener("click", () => {
     document.querySelector(".more-text").classList.toggle("hidden");
   });
 
+
+
+//background
+const slides = document.querySelectorAll(".hero-img");
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[i].classList.add("active");
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  }
+
+  // Auto slide every 5 seconds
+  setInterval(nextSlide, 3000);
 </script>
 </body>
 </html>

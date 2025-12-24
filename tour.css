@@ -201,6 +201,27 @@ body::before {
   display: block;
 }
 
+/* Mobile sidebar dropdown */
+.mobile-submenu {
+  display: none;
+  list-style: none;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+.mobile-submenu li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Show submenu when active */
+.mobile-dropdown.active .mobile-submenu {
+  display: block;
+}
+
+
 /* Hero Section */
 .hero {
    height: 70vh;

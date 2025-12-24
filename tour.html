@@ -22,23 +22,24 @@
   <nav class="navbar">
     <a href="index.html">Home</a>
     <a href="#">About Us</a>
-    <a href="#">Flights</a>
+    <a href="flightpage.html">Flights</a>
     <div class="dropdown" id="visaDropdown">
       <a href="#" class="vdropbtn">Visa & Insurance ▾</a>
       <div class="dropdown-content">
-        <a href="#">Travel Insurance</a>
-        <a href="#">Visa Assistance</a>
+        <a href="Travel_insurance.html">Travel Insurance</a>
+        <a href="visa.html">Visa Assistance</a>
       </div>
     </div>
 
-    <div class="dropdown" id="tourDropdown">
-      <a href="#" class="dropbtn">Tours ▾</a>
-      <div class="dropdown-content">
-        <a href="#inbound">Inbound Tours</a>
-        <a href="#outbound">Outbound Tours</a>
-        <a href="#custom">Custom Tour Packages</a>
-      </div>
-    </div>
+  <div class="dropdown" id="tourDropdown">
+  <a href="#" class="dropbtn">Tours ▾</a>
+  <div class="dropdown-content">
+    <a href="#" onclick="openTour('inbound')">Inbound Tours</a>
+    <a href="#" onclick="openTour('outbound')">Outbound Tours</a>
+    <a href="#" onclick="openTour('custom')">Custom Tour Packages</a>
+  </div>
+</div>
+
 
     <a href="#">Packages</a>
     <a href="destination.html">Destinations</a>
@@ -55,9 +56,10 @@
       <li class="mobile-dropdown">
         <a href="#" onclick="toggleDropdown(event)">Tours ▾</a>
         <ul class="mobile-submenu">
-          <li><a href="#inbound">Inbound Tours</a></li>
-          <li><a href="#outbound">Outbound Tours</a></li>
-          <li><a href="#custom">Custom Packages</a></li>
+        <li><a href="#" onclick="handleMobileTour('inbound')">Inbound Tours</a></li>
+<li><a href="#" onclick="handleMobileTour('outbound')">Outbound Tours</a></li>
+<li><a href="#" onclick="handleMobileTour('custom')">Custom Tour Packages</a></li>
+
         </ul>
       </li>
       <li><a href="destination.html">Destinations</a></li>
@@ -317,9 +319,119 @@
   </div>
 </section>
 
+
+  <footer>
+  <div class="footer-container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-section footer-about">
+                    <h3>About Dp Travels</h3>
+                    <p>Your trusted partner in creating unforgettable travel experiences. We specialize in personalized tours, exotic destinations, and seamless travel planning.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/17ZdLWqZs2/" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.instagram.com/dptravelandtour?igsh=M281NnF5Zzc3d3Fs" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+               
+                <!-- Contact Info -->
+                <div class="footer-section footer-contact" id="contact">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact-item" id="contect">
+                        <i class='bx bx-map'></i>
+                        <span>45k Colombo Horana Miriswatta<br>piliyandala,Srilanka,10300</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class='bx bx-phone'></i>
+                        <span>0117072727</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class='bx bx-envelope'></i>
+                        <span>info@dptravelandtours.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class='bx bx-time'></i>
+                        <span>Mon - Fri: 9AM - 7PM</span>
+                    </div>
+                </div>
+
+    <!-- map -->
+     <!-- Map Section -->
+<div class="footer-section footer-map">
+    <h3>Find Us</h3>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.7893903318322!2d79.9332716!3d6.7954607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24500b32e9da7%3A0x8120bf9bc3e8ae0c!2sDP%20Travel%20-%20PVT%20LTD!5e0!3m2!1sen!2slk!4v1763306749071!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+                <!-- Newsletter -->
+                <div class="footer-section footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p style="color: #b0bec5; font-size: 14px; margin-bottom: 15px;">Subscribe to get special offers and travel updates!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dp Travels. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+</footer>
+
 <!-- JavaScript -->
 <script>
  
+   // drop d
+  function toggleDropdown(e) {
+  e.preventDefault();
+  e.target.parentElement.classList.toggle("active");
+}
+  // 1
+const dropdown = document.getElementById("tourDropdown");
+
+dropdown.querySelector(".dropbtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  dropdown.classList.toggle("active");
+});
+
+/* Close dropdown when clicking outside */
+document.addEventListener("click", function (e) {
+  if (!dropdown.contains(e.target)) {
+    dropdown.classList.remove("active");
+  }
+});
+
+
+// 2
+const dropdown1 = document.getElementById("visaDropdown");
+
+dropdown1.querySelector(".vdropbtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  dropdown1.classList.toggle("active");
+});
+
+/* Close dropdown when clicking outside */
+document.addEventListener("click", function (e) {
+  if (!dropdown1.contains(e.target)) {
+    dropdown1.classList.remove("active");
+  }
+});
+  function closeAd() {
+    const ad = document.getElementById("advertBox");
+    ad.style.display = "none";
+  }
   function openTour(id) {
   document.querySelectorAll('.tour-section').forEach(sec =>
     sec.classList.remove('active')
@@ -340,10 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (hash) openTour(hash);
 });
 
-  function toggleDropdown(e) {
-  e.preventDefault();
-  e.target.parentElement.classList.toggle("active");
-}
+
 // toggle
  function toggleMenu() {
     const menuIcon = document.querySelector('.menu-icon');
@@ -355,12 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.classList.toggle('active');
   }
 
-const dropdown = document.getElementById("tourDropdown");
 
-dropdown.querySelector(".dropbtn").addEventListener("click", function (e) {
-  e.preventDefault();
-  dropdown.classList.toggle("active");
-});
 
 /* Close dropdown when clicking outside */
 document.addEventListener("click", function (e) {
@@ -368,6 +472,12 @@ document.addEventListener("click", function (e) {
     dropdown.classList.remove("active");
   }
 });
+function handleMobileTour(id) {
+  openTour(id);          // switch tab + section
+  toggleMenu();          // close sidebar
+  history.pushState(null, "", "#" + id); // update URL
+}
+
 </script>
 
 </body>
