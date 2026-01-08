@@ -23,6 +23,14 @@
   <a class="active" href="#">Home</a>
   <a href="#about">About Us</a>
   <a href="flightpage.html">Flights</a>
+   <div class="dropdown" id="tourDropdown">
+  <a href="#" class="dropbtn">Tours ▾</a>
+  <div class="dropdown-content">
+    <a href="tour.html#inbound">Inbound Tours</a>
+    <a href="tour.html#outbound">Outbound Tours</a>
+    <a href="tour.html#custom">Custom Tour Packages</a>
+  </div>
+</div>
   <div class="dropdown" id="visaDropdown">
     <a href="#" class="vdropbtn">Visa & Insurance ▾</a>
     <div class="dropdown-content">
@@ -35,16 +43,8 @@
   
 
   <!-- Dropdown -->
- <div class="dropdown" id="tourDropdown">
-  <a href="#" class="dropbtn">Tours ▾</a>
-  <div class="dropdown-content">
-    <a href="tour.html#inbound">Inbound Tours</a>
-    <a href="tour.html#outbound">Outbound Tours</a>
-    <a href="tour.html#custom">Custom Tour Packages</a>
-  </div>
-</div>
 
-  <a href="#package">Packages</a>
+
   <a href="cheffeur.html">Chauffeur-Drive</a>
   
   <a href="#contact">Contact</a>
@@ -61,13 +61,6 @@
         <li><a href="#exclusive-deals">About Us</a></li>
         <li><a href="flightpage.html">Flights</a></li>
         <li class="mobile-dropdown">
-        <a href="#" onclick="toggleDropdown(event)">Visa & Insurance ▾</a>
-        <ul class="mobile-submenu">
-          <li><a href="Travel_insurance.html">Travel Insurance</a></li>
-          <li><a href="visa.html">Visa Assistance</a></li>
-        </ul>
-      </li>
-        <li class="mobile-dropdown">
     <a href="#" onclick="toggleDropdown(event)">Tours ▾</a>
     <ul class="mobile-submenu">
       <li><a href="tour.html#inbound">Inbound Tours</a></li>
@@ -75,7 +68,15 @@
       <li><a href="tour.html#custom">Custom Tour Packages</a></li>
     </ul>
   </li>
-        <li><a href="flightpage.html">Package</a></li>
+        <li class="mobile-dropdown">
+        <a href="#" onclick="toggleDropdown(event)">Visa & Insurance ▾</a>
+        <ul class="mobile-submenu">
+          <li><a href="Travel_insurance.html">Travel Insurance</a></li>
+          <li><a href="visa.html">Visa Assistance</a></li>
+        </ul>
+      </li>
+        
+       
         <li><a href="cheffeur.html">Chauffeur-Drive</a></li>
         <li><a href="#contact">Contact Us</a></li>
       </ul>
@@ -90,10 +91,10 @@
 <section class="hero">
   <!-- Slider Images -->
   <div class="hero-slider">
-    <img src="image/London.jpg" class="hero-img active">
-    <img src="image/main3.jpg" class="hero-img">
-    <img src="image/main4.jpg" class="hero-img">
-    <img src="image/main5.jpg" class="hero-img">
+    <img src="image/sigiriya.jpg" class="hero-img active">
+    <img src="image/portcity.jpg" class="hero-img">
+    <img src="image/nilanka-kariyawasam-jh-y6AONhF8-unsplash.jpg" class="hero-img">
+    <img src="image/rathna-deepaya-U19tlIRU1As-unsplash.jpg" class="hero-img">
   </div>
 
   <!-- Left & Right Buttons -->
@@ -112,7 +113,7 @@
   <form class="form-grid">
 
     <!-- Tiketing -->
-   <a href="flights.html" class="input-link">
+   <a href="flightpage.html" class="input-link">
   <div class="input-box">
     <div class="input-field">
       <span><i class='bx bxs-plane bx-fade-up'></i></span>
@@ -177,95 +178,7 @@
     
 </div>
 </section>
-<section>
-  <div class="Popular-pakage" id="package">
-    <h1>POPULAR PAKAGES</h1>
-<p class="explore-link"><button id="showMoreBtn">Explore More <i class='bx bx-right-top-arrow-circle'></i></button></p>
-    <div class="pakage-boxes">
-     
-      <div class="pbox">
-          <div class="heart"><i class="bx bx-heart"></i></div>
-        <img src="image/paris1.jpg" alt="">
-        <div class="content">
-          <p>irland</p>
-          <p>Lorem, ipsum dolor.</p>
-          <p>From 10000</p>
-        </div>
 
-      </div>
-
-       <div class="pbox">
-          <div class="heart"><i class="bx bx-heart"></i></div>
-        <img src="image/view11.jpg" alt="">
-        <div class="content">
-          <p>irland</p>
-          <p>Lorem, ipsum dolor.</p>
-          <p>From 10000</p>
-        </div>
-
-      </div>
-
-       <div class="pbox">
-          <div class="heart" title="Add to wishlist"><i class="bx bx-heart"></i></div>
-        <img src="image/dubai1.jpg" alt="">
-        <div class="content">
-          <p>irland</p>
-          <p>Lorem, ipsum dolor.</p>
-          <p>From 10000</p>
-        </div>
-
-      </div>
-
-       <div class="pbox">
-          <div class="heart"><i class="bx bx-heart"></i></div>
-        <img src="image/London2.jpg" alt="">
-        <div class="content">
-          <p >irland</p>
-          <p>Lorem, ipsum dolor.</p>
-          <p>From 10000</p>
-        </div>
-
-      </div>
-
-  <div class="pbox hidden">
-  <div class="heart"><i class="bx bx-heart"></i></div>
-  <img src="image/view5.jpg" alt="">
-  <div class="content">
-    <p>France</p>
-    <p>Beautiful city</p>
-    <p>From 12000</p>
-  </div>
-</div>
-
-
-  <div class="pbox hidden">
-  <div class="heart"><i class="bx bx-heart"></i></div>
-  <img src="image/Saudi.jpg" alt="">
-  <div class="content">
-    <p>France</p>
-    <p>Beautiful city</p>
-    <p>From 12000</p>
-  </div>
-</div>
-
-  <div class="pbox hidden">
-  <div class="heart"><i class="bx bx-heart"></i></div>
-  <img src="image/singapore.jpg" alt="">
-  <div class="content">
-    <p>France</p>
-    <p>Beautiful city</p>
-    <p>From 12000</p>
-  </div>
-</div>
-
-
-
-
-
-
-    </div>
-  </div>
-</section>
 
 <section>
   <h1 class="choose-headline">WHY CHOOSE US</h1>
@@ -880,20 +793,6 @@ prevBtn.addEventListener("click", () => {
     });
 
 
-    // hide button
-    const btn = document.getElementById("showMoreBtn");
-  const hiddenBoxes = document.querySelectorAll(".pbox.hidden");
-
-  let isShown = false;
-
-  btn.addEventListener("click", () => {
-    hiddenBoxes.forEach(box => {
-      box.style.display = isShown ? "none" : "block";
-    });
-
-    btn.textContent = isShown ? "Explore More" : "Show Less";
-    isShown = !isShown;
-  });
 
 
   // more p page
