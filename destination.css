@@ -1,7 +1,9 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -29,7 +31,8 @@ body::before {
   left: 0;
   width: 100%;
   padding: 15px 8%;
-  background: #ffffff;
+background-color: #0c315c;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +45,7 @@ body::before {
 
 .logo img{
   font-size: 26px;
- max-width: 80px;
+ max-width: 90px;
  height: auto;
   display: block;
    border-radius: 12px;
@@ -61,7 +64,7 @@ body::before {
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  color: #333;
+  color: white;
   padding: 6px 12px;
   border-radius: 8px;
   transition: 0.3s;
@@ -153,7 +156,7 @@ body::before {
 .menu-icon {
     display: none;
     font-size: 30px;
-    color: #333;
+    color: #d3b2b2;
     cursor: pointer;
 }
 
@@ -222,60 +225,6 @@ body::before {
 
 .close-icon i:hover {
   color: #ff4d4d; 
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    position: fixed;
-    top: 70px;
-    right: -100%;
-    width: 200px;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    gap: 15px;
-    box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
-    border-radius: 8px 0 0 8px;
-  }
-
-  /* Show menu icon */
-  .menu-icon {
-    display: block;
-  }
-
-  /* When open */
-  .navbar.open {
-    right: 10px;
-  }
-
-  /* Hide nav links (desktop default) */
-  .navbar a {
-    margin: 10px 0;
-    font-size: 16px;
-  }
-.mobile-submenu {
-  display: none;
-  list-style: none;
-  padding-left: 15px;
-  background: #333;
-}
-
-.mobile-submenu li a {
-  padding: 10px 20px;
-  font-size: 14px;
-  color: #fff;
-}
-
-/* Show submenu */
-.mobile-dropdown.active .mobile-submenu {
-  display: block;
-}
-  
-  /* Header spacing fix */
-  .header {
-    padding: 20px 5%;
-  }
 }
 /* ================= HERO ================= */
 .hero {

@@ -1,7 +1,9 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -22,7 +24,6 @@ body::before {
     opacity: 0.4;
     z-index: -1;
 }
-
 /* Header */
 .header {
   position: fixed;
@@ -30,43 +31,59 @@ body::before {
   left: 0;
   width: 100%;
   padding: 15px 8%;
-  background: #ffffff;
+background-color: #0c315c;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  backdrop-filter: blur(12px);
-  opacity: 0.98;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+   backdrop-filter: blur(12px);
+  /* background: rgba(255, 255, 255, 0.45); */
+  opacity: 0.8;
+  box-shadow: 0 2px 10px 10px rgba(0,0,0,0.08);
 }
 
-.logo img {
-  max-width: 80px;
-  height: auto;
+.logo img{
+  font-size: 26px;
+ max-width: 90px;
+ height: auto;
   display: block;
-  border-radius: 12px;
+   border-radius: 12px;
+  font-weight: 800;
+  color: #ff6b35;
 }
 
 .navbar {
   display: flex;
   gap: 25px;
+
+  
 }
 
 .navbar a {
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  color: #333;
+  color: white;
   padding: 6px 12px;
   border-radius: 8px;
   transition: 0.3s;
 }
+.nav-links a:hover,
+.nav-links .active {
+  background: #ff6b35;
+  color: #fff;
+}
 
-.navbar a:hover,
+.navbar a:hover {
+  color: #ff6b35;
+}
+
 .navbar .active {
   color: #ff6b35;
 }
 
+/* Dropdown container */
 .dropdown {
   position: relative;
   padding-top: 5px;
@@ -96,92 +113,18 @@ body::before {
   color: #fff;
 }
 
+/* Show when active */
 .dropdown.active .dropdown-content {
   display: block;
 }
 
-.menu-icon {
-  display: none;
-  font-size: 30px;
-  color: #333;
-  cursor: pointer;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: -300px;
-  width: 300px;
-  height: 100vh;
-  background-color: #222;
-  transition: right 0.3s ease;
-  z-index: 99;
-  padding-top: 80px;
-}
-
-.sidebar.active {
-  right: 0;
-}
-
-.sidebar ul {
+/* Mobile menu */
+.mobile-menu {
   list-style: none;
   padding: 0;
 }
 
-.sidebar ul li a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 1.2rem 2rem;
-  transition: background-color 0.3s;
-}
-
-.sidebar ul li a:hover {
-  background-color: #444;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.5);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  z-index: 98;
-}
-
-.overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.close-icon {
-  position: absolute;
-  top: 15px;
-  right: 10px;
-  text-align: right;
-  padding: 15px;
-  z-index: 1001;
-  cursor: pointer;
-}
-
-.close-icon i {
-  font-size: 28px;
-  color: #fff;
-  transition: 0.3s ease;
-}
-
-.close-icon i:hover {
-  color: #ff4d4d;
-}
-
-.mobile-dropdown {
-  position: relative;
-}
-
+/* Dropdown submenu */
 .mobile-submenu {
   display: none;
   list-style: none;
@@ -197,30 +140,92 @@ body::before {
   text-decoration: none;
 }
 
+/* Show submenu */
 .mobile-dropdown.active .mobile-submenu {
   display: block;
 }
 
-/* Mobile sidebar dropdown */
-.mobile-submenu {
-  display: none;
+/* Arrow spacing */
+.mobile-dropdown > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: #d3b2b2;
+    cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: #222;
+  transition: right 0.3s ease;
+  z-index: 99;
+  padding-top: 80px;
+}
+.sidebar.active {
+  right: 0;
+}
+.sidebar ul {
   list-style: none;
-  padding-left: 15px;
-  margin-top: 5px;
+  padding: 0;
 }
-
-.mobile-submenu li a {
+.sidebar ul li a {
   display: block;
-  padding: 10px;
-  color: #fff;
-  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  padding: 1.2rem 2rem;
+  transition: background-color 0.3s;
+}
+.sidebar ul li a:hover {
+  background-color: #444;
 }
 
-/* Show submenu when active */
-.mobile-dropdown.active .mobile-submenu {
-  display: block;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 98;
+}
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
+.close-icon {
+      position: absolute; 
+       top: 15px;              
+  right: 10px;
+  text-align: right;
+  padding: 15px;
+   z-index: 1001; 
+  cursor: pointer;
+}
+
+.close-icon i {
+  font-size: 28px;
+  color: #fff; 
+  transition: 0.3s ease;
+}
+
+.close-icon i:hover {
+  color: #ff4d4d; 
+}
 
 /* Hero Section */
 .hero {

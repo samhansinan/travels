@@ -6,7 +6,13 @@
   --dark: #1c1c1c;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Inter", Arial, sans-serif;
@@ -33,7 +39,8 @@ body::before {
   left: 0;
   width: 100%;
   padding: 15px 8%;
-  background: #ffffff;
+background-color: #0c315c;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,7 +53,7 @@ body::before {
 
 .logo img{
   font-size: 26px;
- max-width: 80px;
+ max-width: 90px;
  height: auto;
   display: block;
    border-radius: 12px;
@@ -65,7 +72,7 @@ body::before {
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  color: #333;
+  color: white;
   padding: 6px 12px;
   border-radius: 8px;
   transition: 0.3s;
@@ -157,7 +164,7 @@ body::before {
 .menu-icon {
     display: none;
     font-size: 30px;
-    color: #333;
+    color: #d3b2b2;
     cursor: pointer;
 }
 
