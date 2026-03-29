@@ -24,6 +24,8 @@ body::before {
     opacity: 0.4;
     z-index: -1;
 }
+
+
 /* Header */
 .header {
   position: fixed;
